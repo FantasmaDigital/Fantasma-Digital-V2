@@ -22,9 +22,9 @@ pnpm-lock.yaml
 
 # Build & Runtime
 dist/
-dist-ssr/
 build/
 coverage/
+/database
 
 # Editor directories and files
 .vscode/*

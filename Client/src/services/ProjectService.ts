@@ -16,8 +16,8 @@ export interface ProjectResponse {
 export class ProjectService {
     private static readonly API_URL =
         window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
-            ? 'http://localhost:6677/api/projects/submit'
-            : 'https://api.fantasmadigital.dev/api/projects/submit';
+            ? import.meta.env.VITE_BACKEND_DEVELOP
+            : import.meta.env.VITE_BACKEND_PRODUCTION;
 
     /**
      * Submits a new project request to the backend.
@@ -26,7 +26,6 @@ export class ProjectService {
      */
     static async submit(payload: ProjectPayload): Promise<ProjectResponse> {
         try {
-            console.log('ProjectService: Sending request to:', this.API_URL);
             const response = await fetch(this.API_URL, {
                 method: 'POST',
                 headers: {

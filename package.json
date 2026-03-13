@@ -1,0 +1,16 @@
+{
+  "name": "fantasma-digital-v2",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "install:client": "cd Client && npm install",
+    "install:server": "cd Server && npm install",
+    "install:all": "npm install && npm run install:client && npm run install:server",
+    "dev:client": "cd Client && npm run dev",
+    "dev:server": "cd Server && npm run dev",
+    "dev": "concurrently \"yarn dev:server\" \"yarn dev:client\""
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
