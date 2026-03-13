@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="es" class="light">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fantasma Digital | Ingeniería de Software & Diseño Web</title>
+  <meta name="description"
+    content="Evolucionamos la complejidad técnica en absoluta simplicidad estética. Ingeniería de vanguardia desde el vacío digital." />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://fantasmadigital.dev/" />
+  <meta property="og:title" content="Fantasma Digital | Ingeniería de Software & Diseño Web" />
+  <meta property="og:description"
+    content="Evolucionamos la complejidad técnica en absoluta simplicidad estética. Ingeniería de vanguardia desde el vacío digital." />
+  <meta property="og:image" content="https://fantasmadigital.dev/og-image.png" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://fantasmadigital.dev/" />
+  <meta name="twitter:title" content="Fantasma Digital | Ingeniería de Software & Diseño Web" />
+  <meta name="twitter:description"
+    content="Evolucionamos la complejidad técnica en absoluta simplicidad estética. Ingeniería de vanguardia desde el vacío digital." />
+  <meta name="twitter:image" content="https://fantasmadigital.dev/og-image.png" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="icon" type="image/png" href="/logo.png" />
+  <link rel="apple-touch-icon" href="/logo.png" />
+  <!-- <link rel="manifest" href="/manifest.json" /> -->
+  <meta name="theme-color" content="#fab61e" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;700&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+    rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            primary: "#fab61e",
+            "primary-dim": "#d4965d",
+            background: "#040406",
+            surface: "#121216",
+            "surface-highlight": "#1a1a20",
+          },
+          fontFamily: {
+            display: ["Space Grotesk", "sans-serif"],
+            mono: ["JetBrains Mono", "monospace"],
+            body: ["Inter", "sans-serif"],
+          },
+          backgroundImage: {
+            grain:
+              "url('https://lh3.googleusercontent.com/aida-public/AB6AXuBgncG9pi-V0AvOSH-qmmq7IqO4TIKLwP4jaNqlQLRLkOvrwFfmDh2UHe54w6out3uf9K3PNBghwGRroOuXnA2EWbMsmHFd71AZlYgfi8Au-JOzYnd2raUeKinyY-PcJqnIrEIB5lMedYsYO-QUmFF74hGymPeEjobC9Crf7E9JTGzkEcvh-Fa3miEwnzYsXcvQE066LNlAhNqwcao4mllA3m-wSkhSL1IQMSuL0q1nRUPpWEKvSHG8O05td0uMqmpCfsxOR9kEHxx_')",
+          },
+          animation: {
+            "pulse-slow": "pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+            scanline: "scanline 8s linear infinite",
+            fadeIn: "fadeIn 0.8s ease-out forwards",
+          },
+          keyframes: {
+            scanline: {
+              "0%": { transform: "translateY(-100%)" },
+              "100%": { transform: "translateY(100%)" },
+            },
+            fadeIn: {
+              "0%": { opacity: "0", transform: "translateY(20px)" },
+              "100%": { opacity: "1", transform: "translateY(0)" },
+            },
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    body {
+      background-color: #040406;
+      color: white;
+      overflow-x: hidden;
+    }
+
+    .scrollbar-hide::-webkit-scrollbar {
+      display: none;
+    }
+
+    .scrollbar-hide {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    .text-glow {
+      text-shadow: 0 0 20px rgba(250, 177, 110, 0.3);
+    }
+
+    .border-glow {
+      box-shadow: 0 0 10px rgba(250, 177, 110, 0.1);
+    }
+
+    @keyframes typing {
+      from {
+        width: 0;
+      }
+
+      to {
+        width: 100%;
+      }
+    }
+  </style>
+  <script type="importmap">
+      {
+        "imports": {
+          "react/": "https://esm.sh/react@^19.2.4/",
+          "react": "https://esm.sh/react@^19.2.4",
+          "react-router-dom": "https://esm.sh/react-router-dom@^7.13.0",
+          "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+          "lucide-react": "https://esm.sh/lucide-react@^0.563.0",
+          "react-helmet-async": "https://esm.sh/react-helmet-async@^2.0.5"
+        }
+      }
+    </script>
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+
+</html>
