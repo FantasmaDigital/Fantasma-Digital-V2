@@ -60,12 +60,12 @@ export const Navbar = () => {
                 <div className="hidden lg:flex items-center gap-6">
                     <button
                         onClick={() => navigate('/intake')}
-                        aria-label="Iniciar un nuevo proyecto"
+                        aria-label="Agendar Consultoría de Arquitectura"
                         className="group relative flex items-center justify-between border border-primary/50 bg-primary/5 px-6 py-3 font-mono text-primary transition-all hover:bg-primary hover:text-background rounded-sm"
                     >
                         <div className="flex items-center gap-2">
                             <span className="text-[10px] opacity-70 group-hover:opacity-100">$</span>
-                            <span className="text-[11px] font-bold uppercase tracking-widest">iniciar_proyecto</span>
+                            <span className="text-[11px] font-bold uppercase tracking-widest">Agendar Consultoría</span>
                         </div>
                         <span className="ml-3 w-1.5 h-3 bg-primary animate-pulse group-hover:bg-background"></span>
                     </button>
@@ -185,7 +185,7 @@ export const Navbar = () => {
                                 className="relative z-10 group flex items-center gap-4 bg-primary/10 border border-primary/30 px-10 py-5 rounded-sm overflow-hidden transition-all hover:bg-primary active:scale-95"
                             >
                                 <span className="font-mono text-sm font-bold text-primary group-hover:text-background uppercase tracking-[0.3em]">
-                                    Iniciar Proyecto
+                                    Agendar Consultoría
                                 </span>
                                 <div className="w-2 h-2 bg-primary group-hover:bg-background animate-pulse"></div>
                             </button>

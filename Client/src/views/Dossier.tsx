@@ -92,14 +92,32 @@ const Dossier = () => {
          </section>
 
          {/* Overview */}
-         <section className="py-24 px-6 max-w-7xl mx-auto grid md:grid-cols-12 gap-12">
-            <div className="md:col-span-4">
-               <h2 className="font-display text-4xl font-bold sticky top-32 italic">Visión General</h2>
+         <section className="py-24 px-6 max-w-7xl mx-auto grid md:grid-cols-12 gap-12 md:gap-20">
+            <div className="md:col-span-4 text-center md:text-left">
+               <h2 className="text-3xl md:text-5xl font-bold uppercase md:sticky md:top-32 leading-none tracking-tighter italic">
+                  Análisis <br /> <span className="text-primary">Estratégico</span>
+               </h2>
             </div>
-            <div className="md:col-span-8 text-xl leading-relaxed text-white/80 font-light space-y-8">
-               {project.longDesc.map((p, i) => (
-                  <p key={i}>{p}</p>
-               ))}
+            <div className="md:col-span-8 space-y-16 md:space-y-20">
+               {project.longDesc.map((text, i) => {
+                  const hasPrefix = text.includes(':');
+                  const prefix = hasPrefix ? text.split(':')[0] : `PILLAR_0${i + 1}`;
+                  const content = hasPrefix ? text.split(':').slice(1).join(':').trim() : text;
+                  
+                  return (
+                     <div key={i} className="space-y-8 group">
+                        <div className="flex items-center gap-4">
+                           <span className="text-primary font-mono text-[10px] md:text-xs uppercase tracking-[0.4em] font-bold">
+                              [ {prefix} ]
+                           </span>
+                           <div className="h-px flex-1 bg-gradient-to-r from-primary/30 to-transparent"></div>
+                        </div>
+                        <p className="text-xl md:text-3xl text-white/90 leading-tight md:leading-snug font-light tracking-tight group-hover:text-white transition-colors">
+                           {content}
+                        </p>
+                     </div>
+                  );
+               })}
             </div>
          </section>
 
@@ -112,9 +130,9 @@ const Dossier = () => {
                         <div>
                            <div className="flex items-center gap-4 mb-4">
                               <feature.icon className="text-primary" size={24} />
-                              <span className="font-mono text-primary text-[10px] uppercase tracking-widest leading-none">{feature.title}</span>
+                              <span className="font-mono text-primary text-[10px] uppercase tracking-widest leading-none">Ingeniería Aplicada</span>
                            </div>
-                           <h3 className="font-display text-3xl font-bold mb-6 italic underline decoration-primary/20 underline-offset-8">Ingeniería Aplicada</h3>
+                           <h3 className="font-display text-3xl font-bold mb-6 italic underline decoration-primary/20 underline-offset-8">{feature.title}</h3>
                            <p className="text-white/60 leading-relaxed max-w-lg mb-8 text-lg">
                               {feature.desc}
                            </p>

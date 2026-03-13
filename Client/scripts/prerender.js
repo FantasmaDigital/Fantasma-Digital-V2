@@ -54,7 +54,7 @@ async function prerender() {
     const url = `http://localhost:${port}${route}`;
     console.log(`Pre-rendering ${route}...`);
     try {
-      await page.goto(url, { waitUntil: 'networkidle0', timeout: 30000 });
+      await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 60000 });
       // Short delay to ensure React Helmet Async has applied the title/meta changes
       await new Promise(r => setTimeout(r, 500));
       let html = await page.content();

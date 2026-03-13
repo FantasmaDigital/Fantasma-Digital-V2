@@ -54,10 +54,10 @@ const Stack = () => {
                </div>
 
                {[
-                  { metric: 'Arquitectura', sub: 'Estructura Core', legacy: 'Monolitos rígidos / Legacy', modern: 'Microservicios de Alta Cohesión', stat: 'ESCALA_VERTICAL_Y_HORIZ' },
-                  { metric: 'Despliegue', sub: 'Entrega de Valor', legacy: 'Ciclos de lanzamiento mensuales', modern: 'CI/CD con Despliegue Atómico', stat: '99% AUTOMATIZADO' },
-                  { metric: 'Seguridad', sub: 'Blindaje de Datos', legacy: 'Seguridad Perimetral Básica', modern: 'Zero-Trust & Cifrado de Punto a Punto', stat: 'NIVEL_CORPORATIVO' },
-                  { metric: 'Rendimiento', sub: 'Experiencia Digital', legacy: 'Latencia inestable', modern: 'Ejecución en el Edge (Sub-30ms)', stat: 'VELOCIDAD_INSTANTÁNEA' }
+                  { metric: 'Arquitectura', sub: 'Estructura Operativa', legacy: 'Monolitos rígidos / Legacy', modern: 'Microservicios de Alta Cohesión', stat: 'SOBERANÍA_DE_DATOS' },
+                  { metric: 'Despliegue', sub: 'Entrega de Valor', legacy: 'Ciclos de lanzamiento manuales', modern: 'CI/CD con Despliegue Atómico', stat: '0_INTERRUPCIONES' },
+                  { metric: 'Seguridad', sub: 'Blindaje Crítico', legacy: 'Seguridad Perimetral Básica', modern: 'Zero-Trust para Transacciones Fintech', stat: 'PROTECCIÓN_LVM_ACTIVA' },
+                  { metric: 'Rendimiento', sub: 'Impacto Comercial', legacy: 'Latencia con fuga de rebote', modern: 'Ejecución en el Edge (Sub-30ms)', stat: 'MÁXIMA_CONVERSIÓN' }
                ].map((row, i) => (
                   <div key={i} className="flex flex-col md:grid md:grid-cols-12 border-b border-white/5 hover:bg-white/5 transition-colors group">
                      <div className="col-span-4 p-6 flex flex-col gap-1 border-b md:border-b-0 border-white/5">

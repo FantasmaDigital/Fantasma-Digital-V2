@@ -2,6 +2,8 @@
   "name": "fantasma-digital-v2",
   "version": "1.0.0",
   "private": true,
+  "license": "UNLICENSED",
+  "author": "Fantasma Digital",
   "scripts": {
     "install:client": "cd Client && npm install",
     "install:server": "cd Server && npm install",

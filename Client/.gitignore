@@ -25,6 +25,7 @@ dist/
 dist-ssr/
 build/
 coverage/
+.vite
 
 # Editor directories and files
 .vscode/*

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Github, Facebook, Instagram, Mail, ArrowUpRight, Music2 } from 'lucide-react';
+import { Github, Facebook, Instagram, Mail, ArrowUpRight, Music2, Shield } from 'lucide-react';
 
 
 export const Footer = () => {
@@ -13,7 +13,7 @@ export const Footer = () => {
                 { name: 'Soluciones', path: '/solutions' },
                 { name: 'El Dossier', path: 'eng/dossier' },
                 { name: 'Filosofía', path: '/philosophy' },
-                { name: 'Iniciar Proyecto', path: '/intake' },
+                { name: 'Agendar Consultoría', path: '/intake' },
             ]
         },
         {
@@ -99,6 +99,48 @@ export const Footer = () => {
                             </ul>
                         </div>
                     ))}
+                </div>
+
+                {/* Security Protocol & Certification Bar */}
+                <div className="mt-20 mb-16 relative z-10">
+                    <div className="flex flex-col lg:flex-row items-stretch lg:items-center gap-1 bg-white/[0.02] border border-white/5 rounded-sm overflow-hidden">
+                        <div className="bg-primary/5 px-6 py-4 flex items-center gap-4 border-b lg:border-b-0 lg:border-r border-white/5">
+                            <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center border border-primary/20">
+                                <Shield size={16} className="text-primary animate-pulse" />
+                            </div>
+                            <div>
+                                <span className="font-mono text-[9px] text-primary block uppercase tracking-[0.3em] font-black">Sello de Arquitectura Segura</span>
+                                <span className="font-mono text-[8px] text-white/40 uppercase tracking-[0.1em]">Protocolo V2.4_ACTIVO</span>
+                            </div>
+                        </div>
+                        
+                        <div className="flex-1 px-8 py-4 flex flex-wrap items-center justify-between gap-6">
+                            <div className="flex flex-col">
+                                <span className="font-mono text-[8px] text-white/20 uppercase tracking-[0.2em] mb-1">Certificación Técnica</span>
+                                <span className="font-mono text-[10px] text-white/60 uppercase tracking-[0.1em]">
+                                    Arquitectura basada en <span className="text-primary/80">Principios de Ciberseguridad</span> — Certificación CS50CS
+                                </span>
+                            </div>
+                            
+                            <div className="h-4 w-[1px] bg-white/10 hidden md:block"></div>
+                            
+                            <div className="flex gap-8 items-center">
+                                {[
+                                    'Norma OWASP',
+                                    'ISO 27001',
+                                    'Zero Trust',
+                                    'Cifrado AES-256'
+                                ].map((tag, idx) => (
+                                    <div key={idx} className="flex items-center gap-2 group cursor-default">
+                                        <div className="w-1 h-1 rounded-full bg-primary/40 group-hover:bg-primary transition-colors"></div>
+                                        <span className="font-mono text-[8px] tracking-[0.3em] uppercase text-white/20 group-hover:text-white/60 transition-colors">
+                                            {tag}
+                                        </span>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 {/* Footer Bottom Metadata */}

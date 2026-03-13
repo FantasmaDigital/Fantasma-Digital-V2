@@ -1,6 +1,8 @@
 {
-  "name": "fantasma-digital-experience",
+  "name": "fantasma-digital",
   "private": true,
+  "license": "UNLICENSED",
+  "author": "Fantasma Digital",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
@@ -10,11 +12,15 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@react-three/drei": "^10.7.7",
+    "@react-three/fiber": "^9.5.0",
+    "@types/three": "^0.183.1",
     "lucide-react": "^0.563.0",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
     "react-helmet-async": "^2.0.5",
-    "react-router-dom": "^7.13.0"
+    "react-router-dom": "^7.13.0",
+    "three": "^0.183.2"
   },
   "devDependencies": {
     "@prerenderer/renderer-puppeteer": "^1.2.4",

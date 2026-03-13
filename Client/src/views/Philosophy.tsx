@@ -97,6 +97,35 @@ const Philosophy = () => {
             </div>
          </section>
 
+         {/* Process Visualization Section */}
+         <section className="py-24 md:py-32 px-6 bg-surface/20">
+            <div className="max-w-7xl mx-auto">
+               <div className="mb-16 text-center md:text-left">
+                  <div className="inline-flex items-center gap-2 mb-4">
+                     <div className="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
+                     <span className="font-mono text-xs text-primary/60 tracking-[0.4em] uppercase block">Ingeniería en Movimiento</span>
+                  </div>
+                  <h2 className="font-display text-4xl md:text-7xl font-bold italic tracking-tighter">
+                     Código <span className="text-white/20">→ Arquitectura →</span> Web
+                  </h2>
+               </div>
+               <div className="aspect-video bg-black border border-white/10 rounded-sm overflow-hidden relative group shadow-2xl">
+                  <div className="absolute inset-0 flex items-center justify-center">
+                     <div className="flex flex-col items-center gap-6">
+                        <div className="w-16 h-16 border-t-2 border-primary rounded-full animate-spin"></div>
+                        <div className="text-primary font-mono text-[10px] tracking-[0.5em] uppercase">Sincronizando Activo Visual...</div>
+                     </div>
+                  </div>
+                  {/* Placeholder for future video integration */}
+                  <div className="absolute inset-0 bg-gradient-to-tr from-primary/10 via-transparent to-transparent pointer-events-none"></div>
+                  <div className="absolute bottom-8 left-8 flex items-center gap-4">
+                     <div className="w-8 h-[1px] bg-primary/30"></div>
+                     <span className="font-mono text-[8px] text-white/20 uppercase tracking-[0.2em]">Arch_Source: process_core_v2.mp4</span>
+                  </div>
+               </div>
+            </div>
+         </section>
+
          {/* Identity Cards Section */}
          <section className="py-24 md:py-32 bg-background relative">
             <div className="max-w-7xl mx-auto px-6 flex flex-col lg:flex-row gap-8 md:gap-12">

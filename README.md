@@ -60,4 +60,4 @@ This project is structured with separate frontend and backend environments:
 - **Project Inquiry**: Integrated contact forms powered by the backend API and NodeMailer.
 
 ## License
-Private - Fantasma Digital
+Copyright (c) 2024-2026 Fantasma Digital. All rights reserved. See [LICENSE](LICENSE) for details.

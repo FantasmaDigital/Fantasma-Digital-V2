@@ -1,6 +1,7 @@
 {
     "name": "fantasma-digital-server",
     "version": "1.0.0",
+    "private": true,
     "description": "Backend API for Fantasma Digital V2",
     "main": "dist/server.js",
     "scripts": {
@@ -11,8 +12,8 @@
         "format": "prettier --write \"src/**/*.ts\""
     },
     "keywords": [],
-    "author": "",
-    "license": "ISC",
+    "author": "Fantasma Digital",
+    "license": "UNLICENSED",
     "dependencies": {
         "cors": "^2.8.5",
         "dotenv": "^16.4.5",
