@@ -22,8 +22,18 @@ const Ecosystem = () => {
    return (
       <div className="min-h-screen bg-background text-white lg:pb-32 animate-fadeIn">
          <SEO
-            title="Ecosistema & Infraestructura | Total Control"
-            description="Desde dominios hasta Bare Metal. Garantizamos soberanía total sobre tu stack tecnológico con infraestructuras optimizadas para el rendimiento."
+            title="Ecosistema e Infraestructura | Control Total"
+            description="Desde dominios hasta servidores físicos. Garantizamos control total sobre tu tecnología con infraestructuras optimizadas para la velocidad."
+            schema={{
+               "@context": "https://schema.org",
+               "@type": "Service",
+               "serviceType": "Cloud & Infrastructure Management",
+               "provider": {
+                  "@type": "Organization",
+                  "name": "Fantasma Digital"
+               },
+               "description": "Servicios de gestión de dominios, contenedores, orquestación y servidores físicos."
+            }}
          />
          <div className="max-w-[1400px] mx-auto px-6 py-12 lg:py-24">
 

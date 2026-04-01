@@ -12,6 +12,7 @@ const Solutions = () => {
       <SEO
         title="Soluciones de Ingeniería | Fantasma Digital"
         description="Explora infraestructuras de alto rendimiento: desde microservicios escalables hasta interfaces cinemáticas de grado corporativo."
+        breadcrumbs={[{ name: "Soluciones", path: "/solutions" }]}
         schema={{
           "@context": "https://schema.org",
           "@type": "ItemList",
@@ -53,15 +54,15 @@ const Solutions = () => {
         <div className="max-w-6xl mx-auto relative z-10 text-center md:text-left">
           <div className="flex items-center justify-center md:justify-start gap-2 text-primary font-mono text-[10px] md:text-xs tracking-[0.3em] uppercase mb-6">
             <span className="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
-            Sistemas Core Operativos
+            Lo que construimos
           </div>
           <h1 className="text-[12vw] md:text-8xl font-black leading-[0.9] tracking-tighter uppercase mb-10">
-            Artesanía Digital.<br />
-            <span className="text-primary italic">Poder Corporativo.</span>
+            Cada solución,<br />
+            <span className="text-primary italic">hecha para ti.</span>
           </h1>
           <div className="max-w-2xl border-l-2 md:border-l-4 border-primary pl-6 py-2 mx-auto md:mx-0">
             <p className="text-base md:text-xl text-white/60 font-light leading-relaxed">
-              No construimos sitios web; desplegamos infraestructuras de negocio. Engineering-first solutions for the modern enterprise.
+              No vendemos paquetes genéricos. Analizamos tu negocio y construimos exactamente lo que necesitas para crecer, diferenciarte y no depender de nadie más.
             </p>
           </div>
         </div>
@@ -72,12 +73,12 @@ const Solutions = () => {
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row items-center md:items-end justify-between mb-20 md:mb-24 gap-8 text-center md:text-left">
             <div className="border-l-0 md:border-l-4 border-primary md:pl-6">
-              <h3 className="text-primary font-mono text-[10px] md:text-sm uppercase tracking-[0.3em] mb-4">// CAPACIDADES_DE_INGENIERÍA.SYS</h3>
-              <h2 className="text-4xl md:text-6xl font-bold uppercase tracking-tighter text-white leading-none">Servicios de Despliegue Crítico</h2>
+              <h3 className="text-primary font-mono text-[10px] md:text-sm uppercase tracking-[0.3em] mb-4">// ¿Qué necesitas construir?</h3>
+              <h2 className="text-4xl md:text-6xl font-bold uppercase tracking-tighter text-white leading-none">Elige tu solución</h2>
             </div>
             <div className="font-mono text-[10px] text-white/40 uppercase tracking-widest leading-loose border border-white/10 px-4 py-2 bg-white/5 md:bg-transparent md:border-0">
-              Nivel de Acceso: Administrador<br className="hidden md:block" />
-              <span className="md:ml-4">SLA: 99.9% Garantizado</span>
+              Respondemos en menos de 24h<br className="hidden md:block" />
+              <span className="md:ml-4">Consulta inicial sin costo</span>
             </div>
           </div>
 
@@ -94,7 +95,7 @@ const Solutions = () => {
 
                 <div className="p-6 md:p-8 pb-4">
                   <div className="mb-6 text-white/20 group-hover:text-primary transition-all duration-500 transform group-hover:scale-110 origin-left flex justify-between items-start">
-                    <service.icon size={40} md:size={48} strokeWidth={1} />
+                    <service.icon size={40} strokeWidth={1} />
                     <Code size={16} className="opacity-0 group-hover:opacity-100 transition-opacity" />
                   </div>
                   <h3 className="text-2xl md:text-3xl font-bold mb-4 uppercase tracking-tighter text-white group-hover:text-primary transition-colors leading-none">{service.title}</h3>
@@ -104,7 +105,7 @@ const Solutions = () => {
                 <div className="px-6 md:px-8 pb-8 mt-auto">
                   <div className="flex flex-wrap gap-2 mb-8">
                     {service.tags.map(tag => (
-                      <span key={tag} className="px-2 py-0.5 text-[8px] font-mono border border-white/10 text-white/30 uppercase tracking-widest">{tag}</span>
+                      <span key={tag} className="px-2 py-0.5 text-[8px] font-mono border border-white/20 text-white/50 uppercase tracking-widest">{tag}</span>
                     ))}
                   </div>
 
@@ -122,7 +123,7 @@ const Solutions = () => {
                       onClick={() => navigate(`/solutions/${service.slug}`)}
                       className="w-full py-4 border border-white/10 text-[10px] font-mono font-bold uppercase tracking-[0.3em] text-white/60 hover:text-background hover:bg-primary hover:border-primary transition-all flex items-center justify-center gap-3 group/btn relative overflow-hidden"
                     >
-                      <span className="relative z-10">Solicitar Protocolo</span>
+                      <span className="relative z-10">Ver más detalles</span>
                       <ArrowRight size={14} className="group-hover/btn:translate-x-1 transition-transform relative z-10" />
                     </button>
                   </div>

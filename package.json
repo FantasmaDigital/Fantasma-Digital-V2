@@ -5,12 +5,12 @@
   "license": "UNLICENSED",
   "author": "Fantasma Digital",
   "scripts": {
-    "install:client": "cd Client && npm install",
-    "install:server": "cd Server && npm install",
-    "install:all": "npm install && npm run install:client && npm run install:server",
-    "dev:client": "cd Client && npm run dev",
-    "dev:server": "cd Server && npm run dev",
-    "dev": "concurrently \"yarn dev:server\" \"yarn dev:client\""
+    "install:client": "cd Client && pnpm install",
+    "install:server": "cd Server && pnpm install",
+    "install:all": "pnpm install && pnpm run install:client && pnpm run install:server",
+    "dev:client": "cd Client && pnpm run dev",
+    "dev:server": "cd Server && pnpm run dev",
+    "dev": "concurrently \"pnpm dev:server\" \"pnpm dev:client\""
   },
   "devDependencies": {
     "concurrently": "^8.2.2"

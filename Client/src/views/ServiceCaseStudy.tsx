@@ -32,6 +32,10 @@ const ServiceCaseStudy = () => {
          <SEO
             title={`${data.title} | Soluciones de Ingeniería de Élite`}
             description={`${data.description} Descubre cómo optimizamos infraestructuras críticas con ingeniería de precisión.`}
+            breadcrumbs={[
+               { name: "Soluciones", path: "/solutions" },
+               { name: data.title, path: `/solutions/${slug}` }
+            ]}
             schema={{
                "@context": "https://schema.org",
                "@type": "Service",

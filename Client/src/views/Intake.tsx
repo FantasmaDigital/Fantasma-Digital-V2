@@ -99,7 +99,7 @@ const Intake = () => {
    // Log budget changes with a debounce to prevent terminal spam
    useEffect(() => {
       const timer = setTimeout(() => {
-         addLog(`RESOURCE_REALLOCATION: Potencia de cómputo ajustada a $${formData.budget.toLocaleString()}`, 'primary');
+         addLog(`FINANZAS: Inversión proyectada en $${formData.budget.toLocaleString()}`, 'primary');
       }, 500);
       return () => clearTimeout(timer);
    }, [formData.budget]);
@@ -162,7 +162,21 @@ const Intake = () => {
       <div className="min-h-screen bg-background flex flex-col items-center justify-center p-3 lg:p-12 relative animate-fadeIn">
          <SEO
             title="Iniciar Proyecto | Configuración de Sistema"
-            description="Comienza la secuencia de construcción de tu próximo activo digital. Define alcances, objetivos y presupuesto para infraestructura de alto rendimiento."
+            description="Comienza la construcción de tu próximo activo digital. Define alcances, objetivos y presupuesto para infraestructura de alto rendimiento."
+            breadcrumbs={[{ name: "Iniciar Proyecto", path: "/intake" }]}
+            schema={{
+               "@context": "https://schema.org",
+               "@type": "ContactPage",
+               "name": "Iniciar Proyecto | Fantasma Digital",
+               "description": "Formulario de contacto y configuración de proyectos de ingeniería de software.",
+               "url": "https://fantasmadigital.dev/intake",
+               "mainEntity": {
+                  "@type": "ContactPoint",
+                  "contactType": "Sales",
+                  "email": "info@fantasmadigital.dev",
+                  "telephone": "+503-7707-9798"
+               }
+            }}
          />
          {/* Background watermark */}
 
@@ -176,44 +190,44 @@ const Intake = () => {
             {/* Form */}
             <div className="lg:col-span-8 bg-surface p-8 lg:p-12">
                <div className="mb-10">
-                  <h1 className="text-4xl font-black tracking-tighter text-white mb-2 font-display">Iniciar Construcción del Sistema</h1>
-                  <p className="text-white/50 font-medium font-mono text-sm">Define la arquitectura de tu próximo activo.</p>
+                  <h1 className="text-4xl font-black tracking-tighter text-white mb-2 font-display">Hablemos de tu próximo proyecto</h1>
+                  <p className="text-white/50 font-medium font-mono text-sm">Cuéntanos qué necesitas y te ayudaremos a construirlo.</p>
                </div>
 
                <div className="space-y-10">
                   {/* 01. Identity */}
                   <section>
                      <h3 className="text-xs font-bold uppercase tracking-[0.2em] text-primary mb-6 flex items-center gap-2 font-mono">
-                        <Fingerprint size={16} /> 01. Identidad del Proyecto
+                        <Fingerprint size={16} /> 01. Sobre ti y tu empresa
                      </h3>
                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div className="flex flex-col gap-2">
-                           <label className="text-xs font-mono text-white/40 uppercase tracking-tighter">ID_Proyecto / Nombre</label>
+                           <label className="text-xs font-mono text-white/40 uppercase tracking-tighter">Nombre del proyecto</label>
                            <input
                               type="text"
                               value={formData.projectId}
                               onChange={(e) => handleInputChange('projectId', e.target.value)}
-                              placeholder="GHOST_PROTOCOL_01"
+                              placeholder="Nombre de tu idea o negocio"
                               className="bg-transparent border border-white/20 focus:border-primary rounded p-4 font-mono text-sm text-white placeholder:text-white/10 outline-none transition-colors"
                            />
                         </div>
                         <div className="flex flex-col gap-2">
-                           <label className="text-xs font-mono text-white/40 uppercase tracking-tighter">Email_del_Arquitecto</label>
+                           <label className="text-xs font-mono text-white/40 uppercase tracking-tighter">Tu correo electrónico</label>
                            <input
                               type="email"
                               value={formData.email}
                               onChange={(e) => handleInputChange('email', e.target.value)}
-                              placeholder="info@fantasmadigital.dev"
+                              placeholder="tu@email.com"
                               className="bg-transparent border border-white/20 focus:border-primary rounded p-4 font-mono text-sm text-white placeholder:text-white/10 outline-none transition-colors"
                            />
                         </div>
-                        <div className="flex flex-col gap-2 md:col-span-2">
-                           <label className="text-xs font-mono text-white/40 uppercase tracking-tighter">Organización / Compañía</label>
+                         <div className="flex flex-col gap-2 md:col-span-2">
+                           <label className="text-xs font-mono text-white/40 uppercase tracking-tighter">Empresa u Organización</label>
                            <input
                               type="text"
                               value={formData.company}
                               onChange={(e) => handleInputChange('company', e.target.value)}
-                              placeholder="ACME CORP INT."
+                              placeholder="Nombre de tu empresa"
                               className="bg-transparent border border-white/20 focus:border-primary rounded p-4 font-mono text-sm text-white placeholder:text-white/10 outline-none transition-colors"
                            />
                         </div>
@@ -223,7 +237,7 @@ const Intake = () => {
                   {/* 02. Scope */}
                   <section>
                      <h3 className="text-xs font-bold uppercase tracking-[0.2em] text-primary mb-6 flex items-center gap-2 font-mono">
-                        <Layers size={16} /> 02. Alcance de la Infraestructura
+                        <Layers size={16} /> 02. ¿Qué necesitas que construyamos?
                      </h3>
 
                      <div className="relative" ref={scopeRef}>
@@ -234,8 +248,8 @@ const Intake = () => {
                         >
                            <span className={formData.scopes.length > 0 ? 'text-white' : 'text-white/20'}>
                               {formData.scopes.length > 0
-                                 ? `${formData.scopes.length} Módulo(s) Seleccionado(s)`
-                                 : 'SELECCIONAR_MÓDULOS_DE_SISTEMA...'}
+                                 ? `${formData.scopes.length} Servicio(s) Seleccionado(s)`
+                                 : 'Selecciona uno o más servicios...'}
                            </span>
                            <ChevronDown size={18} className={`text-primary transition-transform duration-300 ${isScopeOpen ? 'rotate-180' : ''}`} />
                         </button>
@@ -282,14 +296,14 @@ const Intake = () => {
                   {/* 03. Concept */}
                   <section>
                      <h3 className="text-xs font-bold uppercase tracking-[0.2em] text-primary mb-6 flex items-center gap-2 font-mono">
-                        <MessageSquare size={16} /> 03. Concepto y Objetivos
+                        <MessageSquare size={16} /> 03. Detalles del proyecto
                      </h3>
                      <div className="flex flex-col gap-2">
-                        <label className="text-xs font-mono text-white/40 uppercase tracking-tighter">Visión_del_Sistema</label>
+                        <label className="text-xs font-mono text-white/40 uppercase tracking-tighter">¿Cuál es tu visión u objetivo?</label>
                         <textarea
                            value={formData.message}
                            onChange={(e) => handleInputChange('message', e.target.value)}
-                           placeholder="Describe tu visión, desafíos y lo que esperas lograr..."
+                           placeholder="Cuéntanos un poco más sobre lo que tienes en mente..."
                            rows={4}
                            className="bg-transparent border border-white/20 focus:border-primary rounded p-4 font-mono text-sm text-white placeholder:text-white/10 outline-none transition-colors resize-none"
                         />
@@ -300,7 +314,7 @@ const Intake = () => {
                   <section>
                      <div className="flex justify-between items-end mb-6">
                         <h3 className="text-xs font-bold uppercase tracking-[0.2em] text-primary flex items-center gap-2 font-mono">
-                           <DollarSign size={16} /> 04. Presupuesto de Ingeniería
+                           <DollarSign size={16} /> 04. Inversión estimada
                         </h3>
                         <div className="flex items-center gap-2 bg-primary/5 px-3 py-2 rounded border border-primary/20">
                            <span className="text-primary font-mono text-sm leading-none">$</span>
@@ -354,10 +368,10 @@ const Intake = () => {
                         {isSubmitting ? (
                            <>
                               <div className="w-4 h-4 border-2 border-background/50 border-t-background rounded-full animate-spin" />
-                              PROCESANDO...
+                              ENVIANDO...
                            </>
                         ) : (
-                           'Solicitar Despliegue'
+                           'Enviar solicitud'
                         )}
                      </button>
                   </div>

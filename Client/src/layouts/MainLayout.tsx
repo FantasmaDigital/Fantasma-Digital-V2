@@ -4,6 +4,7 @@ import { Footer } from '../components/layout/Footer';
 import { Grain } from '../components/layout/Grain';
 import { ScrollToTop } from '../components/layout/ScrollToTop';
 import { ScrollToTopOnNav } from '../components/layout/ScrollToTopOnNav';
+import { WhatsAppButton } from '../components/common/WhatsAppButton';
 
 interface MainLayoutProps {
     children: React.ReactNode;
@@ -16,6 +17,7 @@ export const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
             <Grain />
             <Navbar />
             <ScrollToTop />
+            <WhatsAppButton />
             <main className="pt-24 min-h-[calc(100vh-theme(spacing.24))] flex flex-col">
                 {children}
             </main>

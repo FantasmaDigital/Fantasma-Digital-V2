@@ -10,17 +10,17 @@ export const Footer = () => {
         {
             title: 'Principal',
             links: [
-                { name: 'Soluciones', path: '/solutions' },
-                { name: 'El Dossier', path: 'eng/dossier' },
-                { name: 'Filosofía', path: '/philosophy' },
+                { name: 'Soluciones de Software', path: '/solutions' },
+                { name: 'Dossier de Proyectos', path: '/eng/dossier' },
+                { name: 'Filosofía Ghost Code', path: '/philosophy' },
                 { name: 'Agendar Consultoría', path: '/intake' },
             ]
         },
         {
             title: 'Tecnología',
             links: [
-                { name: 'Ecosistema', path: '/ecosystem' },
-                { name: 'Stack Técnico', path: '/stack' },
+                { name: 'Ecosistema e Infraestructura', path: '/ecosystem' },
+                { name: 'Stack Tecnológico', path: '/stack' },
             ]
         }
     ];

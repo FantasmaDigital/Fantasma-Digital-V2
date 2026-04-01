@@ -17,14 +17,15 @@ interface EnvConfig {
     SMTP_PASS: string;
     SMTP_SECURE: boolean;
     CORS_ALLOW_ALL: boolean;
+    DISCORD_WEBHOOK_URL: string;
 }
 
 const getEnv = (key: string, defaultValue?: string): string => {
     const value = process.env[key] || defaultValue;
-    if (value === undefined) {
+    if (value === undefined && defaultValue === undefined) {
         throw new Error(`Missing environment variable: ${key}`);
     }
-    return value;
+    return value || '';
 };
 
 export const env: EnvConfig = {
@@ -40,4 +41,5 @@ export const env: EnvConfig = {
     SMTP_PASS: getEnv('SMTP_PASS', ''),
     SMTP_SECURE: getEnv('SMTP_SECURE', 'false') === 'true',
     CORS_ALLOW_ALL: getEnv('CORS_ALLOW_ALL', 'false') === 'true',
+    DISCORD_WEBHOOK_URL: getEnv('DISCORD_WEBHOOK_URL', ''),
 };

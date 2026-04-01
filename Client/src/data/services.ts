@@ -1,15 +1,15 @@
-import { Terminal, Layers, Palette, Cloud, Brain, Database, ShoppingCart, Smartphone, Gauge, Zap, Server, Code, Cpu, Shield, HardDrive } from 'lucide-react';
+import { Terminal, Layers, Palette, Cloud, Brain, Database, ShoppingCart, Smartphone, Gauge, Zap, Server, Cpu, Shield, HardDrive, BarChart3, TrendingUp } from 'lucide-react';
 
 export const servicesHome = [
-    { id: '01', title: 'Páginas y Sistemas Web', slug: 'full-stack-development', icon: Terminal, desc: 'Creamos sitios web potentes y aplicaciones interactivas.' },
-    { id: '02', title: 'Conexión entre Sistemas', slug: 'api-ecosystems', icon: Layers, desc: 'Hacemos que tus herramientas de software hablen entre sí.' },
-    { id: '03', title: 'Modernización de Software', slug: 'elite-refactoring', icon: Cpu, desc: 'Actualizamos tus sistemas antiguos para que sean rápidos y modernos.' },
-    { id: '04', title: 'Diseño Visual Digital', slug: 'ui-ux-design', icon: Palette, desc: 'Diseñamos interfaces elegantes y fáciles de usar.' },
-    { id: '05', title: 'Nube y Servidores', slug: 'cloud-devops', icon: Cloud, desc: 'Gestionamos tu presencia en internet con máxima estabilidad.' },
-    { id: '06', title: 'Inteligencia Artificial', slug: 'ai-automation', icon: Brain, desc: 'Automatizamos tus procesos con tecnología inteligente.' },
-    { id: '07', title: 'Organización de Datos', slug: 'database-architecture', icon: Database, desc: 'Guardamos y ordenamos tu información de forma segura.' },
-    { id: '08', title: 'Venta Online (Tiendas)', slug: 'ecommerce-solutions', icon: ShoppingCart, desc: 'Montamos tu tienda digital lista para vender.' },
-    { id: '09', title: 'Aplicaciones para Celular', slug: 'mobile-development', icon: Smartphone, desc: 'App nativas para iPhone y Android.' }
+    { id: '01', title: 'Páginas y Sistemas Web', slug: 'full-stack-development', icon: Terminal, desc: 'Sitios y plataformas web de alto rendimiento, construidos para crecer con tu negocio.' },
+    { id: '02', title: 'Conexión entre Sistemas', slug: 'api-ecosystems', icon: Layers, desc: 'Unimos tus herramientas para que trabajen solas, sin intervención manual.' },
+    { id: '03', title: 'Inteligencia Artificial', slug: 'ai-automation', icon: Brain, desc: 'Agentes de IA que responden, califican y agendan por ti, las 24 horas del día.' },
+    { id: '04', title: 'Identidad de Marca', slug: 'visual-identity-systems', icon: Palette, desc: 'Tu logo, colores y sistema visual completo. Hecho para que no pases desapercibido.' },
+    { id: '05', title: 'Marketing y Crecimiento', slug: 'algorithmic-marketing-growth', icon: TrendingUp, desc: 'Campañas inteligentes con SEO técnico, automatización CRM e IA para escalar tu retorno.' },
+    { id: '06', title: 'Infraestructura y Nube', slug: 'cloud-devops', icon: Cloud, desc: 'Tu servidor siempre activo, seguro y sin caídas. Gestión cloud que tú controlas.' },
+    { id: '07', title: 'Organización de Datos', slug: 'database-architecture', icon: Database, desc: 'Bases de datos ordenadas, rápidas y seguras que soportan cualquier volumen de información.' },
+    { id: '08', title: 'Tiendas en Línea', slug: 'ecommerce-solutions', icon: ShoppingCart, desc: 'Tu tienda online lista para vender, con pagos integrados y experiencia de compra fluida.' },
+    { id: '09', title: 'Aplicaciones Móviles', slug: 'mobile-development', icon: Smartphone, desc: 'Apps nativas para iOS y Android que tus usuarios van a querer usar todos los días.' }
 ];
 
 export const servicesSolutions = [
@@ -18,98 +18,107 @@ export const servicesSolutions = [
         title: 'Desarrollo de Plataformas Web',
         slug: 'full-stack-development',
         icon: Terminal,
-        desc: 'Sistemas web completos, rápidos y seguros. Desde la idea hasta el lanzamiento final.',
-        tags: ['PÁGINAS WEB', 'SISTEMAS', 'INTERNET'],
+        desc: 'Tu sitio web o plataforma, construida desde cero para ser rápida, segura y lista para crecer.',
+        tags: ['WEB', 'ESCALABILIDAD', 'RENDIMIENTO'],
         stat: 'ESTADO: ALTA CARGA'
     },
     {
         id: '002',
-        title: 'Integración de Herramientas',
+        title: 'Conexión entre Sistemas (API)',
         slug: 'api-ecosystems',
         icon: Layers,
-        desc: 'Conectamos tus diferentes programas y servicios internos para que trabajen como uno solo.',
-        tags: ['CONEXIONES', 'ENLACES', 'FLUJO'],
+        desc: 'Conectamos tus herramientas — CRM, ERP, plataformas externas — para que funcionen como un solo sistema.',
+        tags: ['INTEGRACIÓN', 'FLUJOS', 'AUTOMATIZACIÓN'],
         stat: 'DOCS: INCLUIDO'
     },
     {
         id: '003',
-        title: 'Actualización de Sistemas Antiguos',
-        slug: 'elite-refactoring',
-        icon: Cpu,
-        desc: 'Tomamos tu software actual y lo transformamos en una herramienta moderna y veloz.',
-        tags: ['MEJORA', 'VELOCIDAD', 'ESTABILIDAD'],
-        stat: 'OPTIMIZACIÓN: TOTAL'
+        title: 'Inteligencia Artificial y Agentes',
+        slug: 'ai-automation',
+        icon: Brain,
+        desc: 'Un agente que conoce tu negocio, responde a tus clientes y automatiza tareas repetitivas sin que muevas un dedo.',
+        tags: ['IA', 'AGENTES', 'AUTOMATIZACIÓN'],
+        stat: 'SISTEMA: INTELIGENTE'
     },
     {
         id: '004',
-        title: 'Diseño Digital y de Usuario',
-        slug: 'ui-ux-design',
+        title: 'Identidad de Marca y Branding',
+        slug: 'visual-identity-systems',
         icon: Palette,
-        desc: 'Diseño de interfaces que enamoran a tus clientes y simplifican su experiencia.',
-        tags: ['DISEÑO', 'MARCA', 'EXPERIENCIA'],
+        desc: 'Tu logo, paleta de colores, tipografía y sistema visual completo para que tu marca se vea profesional desde el día uno.',
+        tags: ['MARCA', 'DISEÑO', 'BRANDING'],
         stat: 'CALIDAD: PREDICTIVA'
     },
     {
         id: '005',
-        title: 'Infraestructura y Nube',
-        slug: 'cloud-devops',
-        icon: Server,
-        desc: 'Montamos y mantenemos tus servidores en la nube para que nunca dejen de funcionar.',
-        tags: ['NUBE', 'ESTABILIDAD', 'AWS'],
-        stat: 'UPTIME: 99.99%'
+        title: 'Marketing y Crecimiento Digital',
+        slug: 'algorithmic-marketing-growth',
+        icon: BarChart3,
+        desc: 'Campañas inteligentes con SEO técnico, automatización de embudos CRM e IA para traerte más clientes al menor costo.',
+        tags: ['SEO', 'CRM', 'CAMPAÑAS'],
+        stat: 'CONVERSIÓN: ACTIVA'
     },
     {
         id: '006',
-        title: 'IA y Automatización de Tareas',
-        slug: 'ai-automation',
-        icon: Brain,
-        desc: 'Usamos Inteligencia Artificial para ahorrarte tiempo y automatizar trabajos repetitivos.',
-        tags: ['BOTS', 'IA', 'EFICIENCIA'],
-        stat: 'SISTEMA: INTELIGENTE'
+        title: 'Infraestructura Cloud y DevOps',
+        slug: 'cloud-devops',
+        icon: Server,
+        desc: 'Tu servidor en la nube, siempre activo y bajo tu control. Sin caídas, sin sorpresas y sin depender de terceros.',
+        tags: ['CLOUD', 'DEVOPS', 'AWS / VERCEL'],
+        stat: 'UPTIME: 99.99%'
     },
     {
         id: '007',
-        title: 'Gestión de Bases de Datos',
+        title: 'Arquitectura de Datos',
         slug: 'database-architecture',
         icon: Database,
-        desc: 'Ordenamos y protegemos toda la información de tu empresa para un acceso rápido.',
-        tags: ['DATOS', 'SEGURIDAD', 'ORDEN'],
+        desc: 'Bases de datos diseñadas para ser rápidas, seguras y capaces de manejar millones de registros sin problemas.',
+        tags: ['DATOS', 'SEGURIDAD', 'VECTORES'],
         stat: 'INTEGRIDAD: 100%'
     },
     {
         id: '008',
-        title: 'Venta Digital y E-commerce',
+        title: 'Tiendas Online (E-commerce)',
         slug: 'ecommerce-solutions',
         icon: Gauge,
-        desc: 'Todo lo que necesitas para vender tus productos o servicios por internet.',
-        tags: ['TIENDA', 'PAGOS', 'VENTAS'],
-        stat: 'CONVERSIÓN: ACTIVA'
+        desc: 'Tu tienda digital con pagos integrados, carrito optimizado y experiencia de compra que convierte visitantes en clientes.',
+        tags: ['COMERCIO', 'PAGOS', 'CONVERSIÓN'],
+        stat: 'CONVERSIÓN: MAX'
     },
     {
         id: '009',
-        title: 'Aplicaciones Móviles',
+        title: 'Aplicaciones Móviles (iOS y Android)',
         slug: 'mobile-development',
         icon: Zap,
-        desc: 'Desarrollamos aplicaciones personalizadas para celulares iOS y Android.',
-        tags: ['MOBILE', 'APP', 'CELULAR'],
+        desc: 'Apps nativas diseñadas para que tus usuarios las usen a diario — rápidas, intuitivas y con tu marca en su bolsillo.',
+        tags: ['MÓVIL', 'iOS', 'ANDROID'],
         stat: 'CALIDAD: NATIVA'
     },
     {
         id: '010',
-        title: 'Revisión y Seguridad Técnica',
-        slug: 'technical-audit',
-        icon: Shield,
-        desc: 'Evaluamos tu sistema actual para encontrar fallas de seguridad y puntos de mejora.',
-        tags: ['REVISIÓN', 'SEGURIDAD', 'CONTROL'],
-        stat: 'CUMPLIMIENTO: MAX'
+        title: 'Modernización de Software',
+        slug: 'elite-refactoring',
+        icon: Cpu,
+        desc: 'Actualizamos tu sistema antiguo a tecnología moderna sin perder un solo día de operación en el proceso.',
+        tags: ['MODERNIZACIÓN', 'LEGACY', 'VELOCIDAD'],
+        stat: 'OPTIMIZACIÓN: TOTAL'
     },
     {
         id: '011',
-        title: 'Servidores y Equipos Físicos',
+        title: 'Seguridad y Auditoría Técnica',
+        slug: 'technical-audit',
+        icon: Shield,
+        desc: 'Buscamos las vulnerabilidades de tu sistema antes de que alguien más las encuentre. Análisis completo, sin rodeos.',
+        tags: ['SEGURIDAD', 'AUDITORÍA', 'OWASP'],
+        stat: 'CUMPLIMIENTO: MAX'
+    },
+    {
+        id: '012',
+        title: 'Infraestructura On-Premise',
         slug: 'on-premise-infrastructure',
         icon: HardDrive,
-        desc: 'Configuración de servidores reales instalados directamente en tu oficina o sede.',
-        tags: ['EQUIPOS', 'LOCAL', 'POTENCIA'],
+        desc: 'Servidores físicos configurados e instalados en tus propias instalaciones. Tu infraestructura, bajo tu techo.',
+        tags: ['LOCAL', 'HARDWARE', 'SERVIDORES'],
         stat: 'RED: CONFIGURADA'
     }
 ];

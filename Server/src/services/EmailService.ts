@@ -49,13 +49,18 @@ export class EmailService {
       </div>
     `;
 
-        // Send to Admin
+        // Send to Admin via Email
         await this.transporter.sendMail({
             from: `"Fantasma Digital System" <${env.SMTP_USER}>`,
             to: env.SMTP_USER,
             subject: `[PROJECT-REQ] ${projectTypes.toUpperCase()} - ${data.name}`,
             html: htmlContent,
         });
+
+        // Send to Discord if configured
+        if (env.DISCORD_WEBHOOK_URL) {
+            await this.sendDiscordNotification(data);
+        }
 
         // Send to Client (Auto-reply)
         const clientHtmlContent = `
@@ -77,5 +82,38 @@ export class EmailService {
             subject: `[RECEIVED] Project Inquiry - Fantasma Digital`,
             html: clientHtmlContent,
         });
+    }
+
+    private async sendDiscordNotification(data: ProjectFormDTO): Promise<void> {
+        const payload = {
+            embeds: [
+                {
+                    title: "🚀 NUEVA SOLICITUD DE PROYECTO",
+                    description: `Un nuevo cliente ha iniciado la secuencia de contacto.`,
+                    color: 0xfab61e, // Hex to Int for #fab61e
+                    fields: [
+                        { name: "👤 Cliente", value: data.name, inline: true },
+                        { name: "📧 Email", value: data.email, inline: true },
+                        { name: "🏢 Empresa", value: data.company || "No especificada", inline: true },
+                        { name: "🛠️ Servicios", value: data.project_type.join(', '), inline: false },
+                        { name: "💰 Presupuesto", value: data.budget_range || "N/A", inline: true },
+                        { name: "📝 Descripción", value: data.description || "Sin descripción" }
+                    ],
+                    footer: { text: "FANTASMA DIGITAL // HQ MONITOR" },
+                    timestamp: new Date().toISOString()
+                }
+            ]
+        };
+
+        try {
+            await fetch(env.DISCORD_WEBHOOK_URL, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            });
+            console.log('✅ Discord notification sent');
+        } catch (error) {
+            console.error('❌ Failed to send Discord notification:', error);
+        }
     }
 }
