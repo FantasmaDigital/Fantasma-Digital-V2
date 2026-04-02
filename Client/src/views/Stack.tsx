@@ -4,18 +4,11 @@ import { BarChart3, Settings, Bolt, CheckCircle, X, Terminal, Cpu, Layers, Brain
 import { servicesSolutions } from '../data/services';
 import { caseStudies } from '../data/caseStudies';
 import { SEO } from '../components/common/SEO';
+import { stats } from '../data/constants';
 
 
 const Stack = () => {
    const navigate = useNavigate();
-
-   // Extract key metrics from case studies
-   const stats = [
-      { metric: '99.99%', label: 'Uptime Garantizado', context: 'Arquitectura Serverless' },
-      { metric: '<30ms', label: 'Latencia Edge', context: 'Procesamiento Cercano' },
-      { metric: '4x', label: 'Rendimiento Operativo', context: 'Optimización de Código' },
-      { metric: '100%', label: 'Escalabilidad Elástica', context: 'Infraestructura como Código' }
-   ];
 
    return (
       <div className="min-h-screen bg-background text-white pt-24 pb-32 px-6 lg:px-20 animate-fadeIn">

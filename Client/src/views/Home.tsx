@@ -1,365 +1,20 @@
 import React, { useState, useEffect } from 'react';
-import { ArrowRight, Activity, PenTool, Cloud, Terminal, Database, Layers, FileText, Cpu, Shield, ChevronRight, Handshake, Zap, BarChart3, Building2, ExternalLink, Palette, Brain, ShoppingCart, Smartphone, Lock } from 'lucide-react';
+import { ArrowRight, ChevronRight, ExternalLink } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-import { TypedLine } from '../components/common/TypedLine';
 import { useScroll } from '../hooks/useScroll';
 const Hero3D = React.lazy(() => import('../components/3d/Hero3D'));
-const DimensionX3D = React.lazy(() => import('../components/3d/DimensionX3D'));
 import { projects } from '../data/projects';
 import { SEO } from '../components/common/SEO';
-
 import { partners } from '../data/partners';
 import { servicesHome } from '../data/services';
 import GrowthArchitecture3D from '../components/3d/GrowthArchitecture3D';
-
-// --- TENSOR GRID SCIENTIFIC VISUALIZATION ---
-const TensorGrid = () => {
-   const canvasRef = React.useRef<HTMLCanvasElement>(null);
-
-   React.useEffect(() => {
-      const canvas = canvasRef.current;
-      if (!canvas) return;
-      const ctx = canvas.getContext('2d');
-      if (!ctx) return;
-
-      let width = 0, height = 0;
-      const resize = () => {
-         width = canvas.width = canvas.parentElement?.clientWidth || 400;
-         height = canvas.height = canvas.parentElement?.clientHeight || 300;
-      };
-      resize();
-      window.addEventListener('resize', resize);
-
-      const gridSize = 40;
-      const mathSymbols = ['Σ', '∇', '∂', '∫', 'ψ', 'λ', 'ρ', 'Ω', 'μ'];
-
-      const nodes = [];
-      for (let x = 0; x < width; x += gridSize) {
-         for (let y = 0; y < height; y += gridSize) {
-            nodes.push({
-               x, y,
-               symbol: mathSymbols[Math.floor(Math.random() * mathSymbols.length)],
-               opacity: 0.1,
-               targetOpacity: Math.random() * 0.3,
-               pulse: Math.random() * Math.PI
-            });
-         }
-      }
-
-      const draw = () => {
-         ctx.clearRect(0, 0, width, height);
-         const time = Date.now() * 0.001;
-
-         // Draw connections (Neural Style)
-         ctx.beginPath();
-         ctx.strokeStyle = 'rgba(255, 204, 0, 0.03)';
-         ctx.lineWidth = 0.5;
-         nodes.forEach((node, i) => {
-            if (i % 7 === 0 && nodes[i + 1]) {
-               ctx.moveTo(node.x, node.y);
-               ctx.lineTo(nodes[i + 1].x, nodes[i + 1].y);
-            }
-         });
-         ctx.stroke();
-
-         // Draw nodes
-         ctx.font = '8px monospace';
-         nodes.forEach(node => {
-            const glow = (Math.sin(time + node.pulse) + 1) / 2;
-            const currentOpacity = (node.targetOpacity * glow) + 0.05;
-
-            ctx.fillStyle = `rgba(255, 204, 0, ${currentOpacity})`;
-            ctx.fillText(node.symbol, node.x, node.y);
-
-            // Subtle tensor box
-            if (Math.random() > 0.99) {
-               ctx.strokeStyle = `rgba(255, 204, 0, 0.1)`;
-               ctx.strokeRect(node.x - 5, node.y - 10, 15, 15);
-            }
-         });
-
-         // Scanline effect
-         const scanY = (time * 50) % height;
-         ctx.fillStyle = 'rgba(255, 204, 0, 0.02)';
-         ctx.fillRect(0, scanY, width, 2);
-
-         requestAnimationFrame(draw);
-      };
-
-      const animId = requestAnimationFrame(draw);
-      return () => {
-         cancelAnimationFrame(animId);
-         window.removeEventListener('resize', resize);
-      };
-   }, []);
-
-   return (
-      <canvas
-         ref={canvasRef}
-         className="absolute inset-0 pointer-events-none"
-      />
-   );
-};
-
-// --- AI TERMINAL COMPONENT ---
-const AITerminal = () => {
-   const [logs, setLogs] = React.useState<string[]>(['Initializing_Cognitive_Core...']);
-   const [step, setStep] = React.useState(0);
-
-   const terminalLogs = [
-      'Establishing_Secure_RAG_Tunnel...',
-      'Deep_Indexing_Knowledge_Vectors...',
-      'Scaling_Autonomous_Agent_071...',
-      'Context_Injected (Namespace: FANTASMA_CORE)',
-      'Awaiting_Signal...',
-      'AI_Node_Active (Priority: CRITICAL)'
-   ];
-
-   React.useEffect(() => {
-      if (step < terminalLogs.length) {
-         const timer = setTimeout(() => {
-            setLogs(prev => [...prev.slice(-4), terminalLogs[step]]);
-            setStep(s => s + 1);
-         }, 2000 + Math.random() * 2000);
-         return () => clearTimeout(timer);
-      } else {
-         const timer = setTimeout(() => {
-            setLogs(['System_Stable...', 'Monitoring_Operations...', 'Agent_Status: IDLE']);
-            setStep(0);
-         }, 5000);
-         return () => clearTimeout(timer);
-      }
-   }, [step]);
-
-   return (
-      <div className="bg-[#08080a] border border-white/10 p-5 rounded-sm shadow-2xl relative group overflow-hidden">
-         <TensorGrid />
-         <style>
-            {`
-               @keyframes shimmer {
-                  0% { transform: translateX(-100%); }
-                  100% { transform: translateX(100%); }
-               }
-               @keyframes scan {
-                  0% { transform: translateY(-100%); }
-                  100% { transform: translateY(1000%); }
-               }
-               @keyframes move {
-                  0% { transform: translate(-50%, -100%); }
-                  100% { transform: translate(-50%, 400%); }
-               }
-            `}
-         </style>
-         {/* HUD Indicators */}
-         <div className="absolute top-3 right-6 flex items-center gap-4">
-            <div className="flex flex-col items-end">
-               <span className="font-mono text-[7px] text-white/30 uppercase">Neural_Sync</span>
-               <div className="w-16 h-1 bg-white/5 mt-1">
-                  <div className="h-full bg-primary/40 animate-[shimmer_2s_infinite]" style={{ width: '85%' }}></div>
-               </div>
-            </div>
-            <div className="flex items-center gap-1.5 px-2 py-0.5 bg-green-500/5 border border-green-500/10">
-               <span className="w-1 h-1 bg-green-500 rounded-full animate-pulse"></span>
-               <span className="font-mono text-[8px] text-green-500/60 uppercase tracking-widest italic">Node_Active</span>
-            </div>
-         </div>
-
-         <div className="font-mono text-[11px] space-y-3 p-2 min-h-[220px]">
-            {logs.map((log, i) => (
-               <div key={i} className={`${i === logs.length - 1 ? 'text-primary/90' : 'text-white/40'} flex gap-2`}>
-                  <span className="opacity-30">[{new Date().toLocaleTimeString([], { hour12: false })}]</span>
-                  <span className="opacity-20">{">"}</span>
-                  <span className={i === logs.length - 1 ? 'animate-pulse' : ''}>{log}</span>
-               </div>
-            ))}
-
-            <div className="mt-8 pt-6 border-t border-white/5 flex gap-6">
-               <div className="flex-1 h-32 bg-white/[0.02] border border-white/5 p-3 relative overflow-hidden">
-                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,204,0,0.03)_0%,transparent_70%)]"></div>
-                  <div className="font-mono text-[7px] text-white/20 mb-2 uppercase tracking-widest">Knowledge_Matrix</div>
-                  <div className="grid grid-cols-4 gap-1 opacity-20">
-                     {[...Array(16)].map((_, i) => (
-                        <div key={i} className="h-2 bg-white/20 rounded-full animate-pulse" style={{ animationDelay: `${i * 100}ms` }}></div>
-                     ))}
-                  </div>
-                  <div className="absolute top-0 left-0 w-full h-[1px] bg-primary/20 animate-[scan_3s_linear_infinite]"></div>
-               </div>
-
-               <div className="w-8 flex items-center justify-center">
-                  <div className="w-px h-full bg-gradient-to-b from-transparent via-primary/30 to-transparent relative">
-                     <div className="absolute top-0 left-1/2 -translate-x-1/2 w-2 h-2 bg-primary rounded-full blur-[4px] animate-[move_4s_linear_infinite]"></div>
-                  </div>
-               </div>
-
-               <div className="flex-1 h-32 bg-white/[0.02] border border-white/5 p-3 relative overflow-hidden">
-                  <div className="font-mono text-[7px] text-white/20 mb-2 uppercase tracking-widest">Agent_Reasoning</div>
-                  <div className="flex items-center justify-center h-full">
-                     <div className="font-mono text-[10px] text-primary/60 text-center space-y-1">
-                        <div className="animate-pulse">[[ ∂ρ/∂t, ∇·J ]]</div>
-                        <div className="text-[14px]">∫ Ψ*ĤΨ dτ</div>
-                        <div className="opacity-40 tracking-tighter">det(A-λI)=0</div>
-                     </div>
-                  </div>
-                  <div className="absolute inset-0 bg-primary/5 animate-pulse pointer-events-none"></div>
-               </div>
-            </div>
-         </div>
-
-         <div className="mt-4 pt-4 border-t border-white/5 flex justify-between items-center text-[8px] font-mono text-white/20 uppercase tracking-[0.2em]">
-            <span>Cognitive_Logic_Module_071</span>
-            <span>Fantasma_AI_V2.0</span>
-         </div>
-      </div>
-   );
-};
-
-// --- GROWTH GRID VISUALIZATION ---
-const GrowthGrid = () => {
-   const canvasRef = React.useRef<HTMLCanvasElement>(null);
-
-   React.useEffect(() => {
-      const canvas = canvasRef.current;
-      if (!canvas) return;
-      const ctx = canvas.getContext('2d');
-      if (!ctx) return;
-
-      let width = 0, height = 0;
-      const resize = () => {
-         width = canvas.width = canvas.parentElement?.clientWidth || 400;
-         height = canvas.height = canvas.parentElement?.clientHeight || 300;
-      };
-      resize();
-      window.addEventListener('resize', resize);
-
-      const draw = () => {
-         ctx.clearRect(0, 0, width, height);
-         const time = Date.now() * 0.001;
-
-         // Draw animated line graphs
-         ctx.beginPath();
-         ctx.strokeStyle = 'rgba(255, 204, 0, 0.1)';
-         ctx.lineWidth = 1;
-
-         ctx.moveTo(0, height / 2);
-         for (let i = 0; i < width; i += 2) {
-            const y = (height / 2) + Math.sin(i * 0.02 + time * 2) * 20 + Math.sin(i * 0.05 + time) * 10;
-            ctx.lineTo(i, y);
-         }
-         ctx.stroke();
-
-         // Draw pulsing data points
-         ctx.fillStyle = 'rgba(255, 204, 0, 0.3)';
-         for (let i = 0; i < 5; i++) {
-            const x = (width / 4) * i;
-            const y = (height / 2) + Math.sin(x * 0.02 + time * 2) * 20 + Math.sin(x * 0.05 + time) * 10;
-            const size = 2 + Math.sin(time * 5 + i) * 1;
-            ctx.beginPath();
-            ctx.arc(x, y, size, 0, Math.PI * 2);
-            ctx.fill();
-         }
-
-         requestAnimationFrame(draw);
-      };
-
-      const animId = requestAnimationFrame(draw);
-      return () => {
-         cancelAnimationFrame(animId);
-         window.removeEventListener('resize', resize);
-      };
-   }, []);
-
-   return <canvas ref={canvasRef} className="absolute inset-0 pointer-events-none opacity-40" />;
-};
-
-// --- GROWTH TERMINAL ---
-const GrowthTerminal = () => {
-   const [logs, setLogs] = React.useState<string[]>(['Initializing_Growth_Engine...']);
-   const [step, setStep] = React.useState(0);
-
-   const terminalLogs = [
-      'Scanning_Market_Signals...',
-      'Optimizing_Ad_Bidding_Algorithm...',
-      'Deep_Link_SEO_Infrastructure_Active...',
-      'Conversion_Funnel_Injected...',
-      'ROI_Predictor_Calibrated (Accuracy: 98.4%)',
-      'Scaling_Performance_Modules...'
-   ];
-
-   React.useEffect(() => {
-      if (step < terminalLogs.length) {
-         const timer = setTimeout(() => {
-            setLogs(prev => [...prev.slice(-4), terminalLogs[step]]);
-            setStep(s => s + 1);
-         }, 1500 + Math.random() * 1000);
-         return () => clearTimeout(timer);
-      } else {
-         const timer = setTimeout(() => {
-            setLogs(['Market_Sync_Stable...', 'Efficiency_Optimized...', 'Growth_Status: SCALING']);
-            setStep(0);
-         }, 4000);
-         return () => clearTimeout(timer);
-      }
-   }, [step]);
-
-   return (
-      <div className="bg-[#08080a] border border-white/10 p-5 rounded-sm shadow-2xl relative group overflow-hidden">
-         <GrowthGrid />
-         <div className="absolute top-3 right-6 flex items-center gap-4">
-            <div className="flex flex-col items-end">
-               <span className="font-mono text-[7px] text-white/30 uppercase">Market_ROAS</span>
-               <div className="w-16 h-1 bg-white/5 mt-1">
-                  <div className="h-full bg-primary/40 animate-pulse" style={{ width: '92%' }}></div>
-               </div>
-            </div>
-            <div className="flex items-center gap-1.5 px-2 py-0.5 bg-primary/5 border border-primary/10">
-               <span className="w-1 h-1 bg-primary rounded-full animate-ping"></span>
-               <span className="font-mono text-[8px] text-primary/60 uppercase tracking-widest italic">Live_Yield</span>
-            </div>
-         </div>
-
-         <div className="font-mono text-[11px] space-y-3 p-2 min-h-[220px]">
-            {logs.map((log, i) => (
-               <div key={i} className={`${i === logs.length - 1 ? 'text-primary/90' : 'text-white/40'} flex gap-2`}>
-                  <span className="opacity-30">[{new Date().toLocaleTimeString([], { hour12: false })}]</span>
-                  <span className="opacity-20">{">"}</span>
-                  <span className={i === logs.length - 1 ? 'animate-pulse' : ''}>{log}</span>
-               </div>
-            ))}
-
-            <div className="mt-8 pt-6 border-t border-white/5 flex gap-6">
-               <div className="flex-1 h-32 bg-white/[0.02] border border-white/5 p-3 relative overflow-hidden text-center">
-                  <div className="font-mono text-[7px] text-white/20 mb-2 uppercase tracking-widest">Yield_Curve</div>
-                  <div className="h-full flex items-center justify-center">
-                     <span className="text-primary/40 text-xl font-black italic">14.2x ROI</span>
-                  </div>
-               </div>
-               <div className="flex-1 h-32 bg-white/[0.02] border border-white/5 p-3 relative overflow-hidden">
-                  <div className="font-mono text-[7px] text-white/20 mb-2 uppercase tracking-widest">Ad_Spread</div>
-                  <div className="grid grid-cols-2 gap-2 opacity-30 mt-2">
-                     <div className="h-1 bg-white/20 w-full"></div>
-                     <div className="h-1 bg-primary/40 w-[80%]"></div>
-                     <div className="h-1 bg-white/20 w-[60%]"></div>
-                     <div className="h-1 bg-primary/40 w-[95%]"></div>
-                  </div>
-               </div>
-            </div>
-         </div>
-
-         <div className="mt-4 pt-4 border-t border-white/5 flex justify-between items-center text-[8px] font-mono text-white/20 uppercase tracking-[0.2em]">
-            <span>Growth_Engine_Module_005</span>
-            <span>Fantasma_Performance_V1.0</span>
-         </div>
-      </div>
-   );
-};
-
-
+import { AITerminal } from '../components/others/IATerminal';
+import { cibersecurity, dimensionX, fullText, operationalInt, performanceProof, pillars, visualIdentity } from '../data/constants';
 
 const Home = () => {
    const navigate = useNavigate();
    const { scrollY } = useScroll();
    const [displayText, setDisplayText] = useState('');
-   const fullText = "SOFTWARE";
 
    useEffect(() => {
       let currentIndex = 0;
@@ -667,12 +322,7 @@ const Home = () => {
                   </p>
 
                   <div className="grid grid-cols-2 gap-4 mt-12 text-left">
-                     {[
-                        { label: 'FIDELIDAD', val: '4K_RT' },
-                        { label: 'LATENCIA', val: '< 20MS' },
-                        { label: 'IA_ENGINE', val: 'GPT-4_O' },
-                        { label: 'RENDER', val: 'WEBGL_2' }
-                     ].map((spec, i) => (
+                     {dimensionX.map((spec, i) => (
                         <div key={i} className="border-l border-primary/20 pl-4 py-2 bg-white/[0.02]">
                            <div className="font-mono text-[8px] text-white/30 uppercase tracking-widest">{spec.label}</div>
                            <div className="font-display font-bold text-white tracking-widest text-xs mt-1">{spec.val}</div>
@@ -718,12 +368,7 @@ const Home = () => {
                   </p>
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10 mt-16 border-t border-white/5 pt-10">
-                     {[
-                        { label: 'Matemática', val: 'PROPORCIÓN ÁUREA' },
-                        { label: 'Estructura', label2: 'GRILLAS DE PRECISIÓN' },
-                        { label: 'Tipografía', val: 'ADN DE MARCA ÚNICO' },
-                        { label: 'Formato', val: 'VECTORES DE ALTA FIDELIDAD' }
-                     ].map((spec, i) => (
+                     {visualIdentity.map((spec, i) => (
                         <div key={i} className="flex flex-col gap-1">
                            <span className="text-[8px] font-mono text-primary/40 uppercase tracking-[0.4em]">{spec.label}</span>
                            <span className="text-[14px] font-display font-medium text-white/80 uppercase tracking-widest">{spec.val || spec.label2}</span>
@@ -792,11 +437,7 @@ const Home = () => {
                   </p>
 
                   <div className="mt-12 space-y-6">
-                     {[
-                        { title: 'Asistente IA 24/7', desc: 'Un agente que conoce tu negocio y responde a tus clientes en cualquier momento del día.' },
-                        { title: 'Marketing que aprende', desc: 'Campañas que se optimizan solas para traerte más clientes al menor costo posible.' },
-                        { title: 'Todo conectado', desc: 'Tu CRM, tu web y tus campañas trabajando juntos, sin intervención manual.' }
-                     ].map((item, i) => (
+                     {operationalInt.map((item, i) => (
                         <div key={i} className="flex gap-4 items-start">
                            <div className="mt-1.5 w-1.5 h-1.5 bg-primary rounded-full shadow-[0_0_8px_rgba(255,204,0,0.5)]"></div>
                            <div>
@@ -824,11 +465,7 @@ const Home = () => {
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-               {[
-                  { id: '01', icon: Activity, title: 'Crece sin límites', desc: 'Tu plataforma evoluciona con tu negocio. Desde 10 usuarios hasta 10 millones, sin cambiar de proveedor ni perder el sueño.' },
-                  { id: '02', icon: PenTool, title: 'Diseño que enamora', desc: 'Interfaces que tus clientes entenderán de inmediato, y que harán que no quieran usar nada más.' },
-                  { id: '03', icon: Cloud, title: 'Tu datos, tu control', desc: 'Infraestructura en la nube que solo tú controlas. Nada de dependencias frágiles ni proveedores que te pueden dejar colgado.' }
-               ].map((item) => (
+               {pillars.map((item) => (
                   <div key={item.id} className="group bg-surface p-8 lg:p-10 border-l border-white/5 hover:border-primary transition-all duration-500 flex flex-col gap-6 lg:gap-8 relative overflow-hidden">
                      <div className="absolute top-0 right-0 p-4 font-mono text-[10px] text-white/10 group-hover:text-primary transition-colors" aria-hidden="true">{item.id}</div>
                      <div className="text-primary">
@@ -868,36 +505,7 @@ const Home = () => {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative z-10">
-               {[
-                  {
-                     icon: Shield,
-                     title: 'Encontramos tus vulnerabilidades',
-                     desc: 'Buscamos las puertas traseras antes de que alguien más las encuentre. Análisis profundo, sin rodeos.',
-                     stat: '99.9%',
-                     statLabel: 'Detección'
-                  },
-                  {
-                     icon: FileText,
-                     title: 'Cumples con la ley',
-                     desc: 'GDPR, ISO 27001, SOC 2. Tu empresa en regla, con la documentación que los clientes grandes te van a pedir.',
-                     stat: '100%',
-                     statLabel: 'Cumplimiento'
-                  },
-                  {
-                     icon: Lock,
-                     title: 'Resistente a ataques',
-                     desc: 'Simulamos ataques reales para reforzar tus defensas antes de que llegue alguien con malas intenciones.',
-                     stat: '24/7',
-                     statLabel: 'Protección'
-                  },
-                  {
-                     icon: Activity,
-                     title: 'Vigilancia constante',
-                     desc: 'Si algo raro pasa, lo sabemos antes que tú. Alertas en tiempo real y respuesta inmediata ante cualquier incidente.',
-                     stat: '<5min',
-                     statLabel: 'Respuesta'
-                  }
-               ].map((item, idx) => (
+               {cibersecurity.map((item, idx) => (
                   <div key={idx} className="group bg-surface border border-red-500/10 p-6 lg:p-8 hover:border-red-400/30 transition-all duration-500 relative overflow-hidden">
                      <div className="absolute top-0 right-0 w-32 h-32 bg-red-500/5 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity" aria-hidden="true"></div>
 
@@ -934,12 +542,7 @@ const Home = () => {
                      <p className="mt-4 font-mono text-[10px] text-white/30 uppercase tracking-widest">Puntuación real de despliegue en producción</p>
                   </div>
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-16">
-                     {[
-                        { label: 'Rendimiento', val: '100', color: 'text-green-500' },
-                        { label: 'Accesibilidad', val: '100', color: 'text-green-500' },
-                        { label: 'Buenas Prácticas', val: '100', color: 'text-green-500' },
-                        { label: 'SEO', val: '100', color: 'text-green-500' },
-                     ].map((score, i) => (
+                     {performanceProof.map((score, i) => (
                         <div key={i} className="flex flex-col items-center gap-4">
                            <div className={`w-20 h-20 rounded-full border-2 border-current ${score.color} flex items-center justify-center font-mono font-bold text-xl relative`}>
                               {score.val}

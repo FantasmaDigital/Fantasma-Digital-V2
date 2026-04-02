@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { servicesSolutions } from '../data/services';
 import { ProjectService, ProjectPayload } from '../services/ProjectService';
 import { SEO } from '../components/common/SEO';
-
+import { logsStats } from '../data/constants';
 
 interface Log {
    id: number;
@@ -31,12 +31,7 @@ const Intake = () => {
    });
 
    // Terminal Logs State
-   const [logs, setLogs] = useState<Log[]>([
-      { id: 1, time: '08:44:21', message: 'INITIALIZING_CORE_ENGINE...', type: 'default' },
-      { id: 2, time: '08:44:22', message: 'SECURITY_HANDSHAKE: SUCCESS', type: 'success' },
-      { id: 3, time: '08:44:23', message: 'FETCHING_NEURAL_TEMPLATES...', type: 'default' },
-      { id: 4, time: '08:44:25', message: '> ESTADO: Esperando_Identidad_de_Arquitectura', type: 'primary' },
-   ]);
+   const [logs, setLogs] = useState<Log[]>(logsStats);
 
    const addLog = (message: string, type: Log['type'] = 'default') => {
       const time = new Date().toLocaleTimeString('en-GB', { hour12: false });

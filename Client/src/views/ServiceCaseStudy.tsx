@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { ArrowLeft, Terminal, Cpu, Shield, Zap, CheckCircle, Code, Database, Server, ArrowRight } from 'lucide-react';
+import { ArrowLeft, Terminal, Cpu, Shield, ArrowRight } from 'lucide-react';
 
 import { caseStudies } from '../data/caseStudies';
 import { SEO } from '../components/common/SEO';
