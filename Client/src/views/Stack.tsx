@@ -4,24 +4,27 @@ import { BarChart3, Settings, Bolt, CheckCircle, X, Terminal, Cpu, Layers, Brain
 import { servicesSolutions } from '../data/services';
 import { caseStudies } from '../data/caseStudies';
 import { SEO } from '../components/common/SEO';
+import { stats } from '../data/constants';
 
 
 const Stack = () => {
    const navigate = useNavigate();
 
-   // Extract key metrics from case studies
-   const stats = [
-      { metric: '99.99%', label: 'Uptime Garantizado', context: 'Arquitectura Serverless' },
-      { metric: '<30ms', label: 'Latencia Edge', context: 'Procesamiento Cercano' },
-      { metric: '4x', label: 'Rendimiento Operativo', context: 'Optimización de Código' },
-      { metric: '100%', label: 'Escalabilidad Elástica', context: 'Infraestructura como Código' }
-   ];
-
    return (
       <div className="min-h-screen bg-background text-white pt-24 pb-32 px-6 lg:px-20 animate-fadeIn">
          <SEO
-            title="Stack Tecnológico | Capacidades de Ingeniería"
-            description="El motor técnico de Fantasma Digital: Microservicios, despliegue atómico y arquitecturas Zero-Trust para el rendimiento corporativo."
+            title="Stack Tecnológico | Capacidades Técnicas"
+            description="El motor técnico de Fantasma Digital: Microservicios, despliegue atómico y arquitecturas modernas para el máximo rendimiento de tu negocio."
+            schema={{
+               "@context": "https://schema.org",
+               "@type": "Service",
+               "serviceType": "Software Engineering Stack",
+               "provider": {
+                  "@type": "Organization",
+                  "name": "Fantasma Digital"
+               },
+               "description": "Capacidades técnicas y stack tecnológico utilizado para soluciones de alto rendimiento."
+            }}
          />
          {/* Hero Section */}
          <div className="mb-20 max-w-7xl mx-auto">
@@ -30,11 +33,11 @@ const Stack = () => {
                NÚCLEO_DE_SISTEMA v4.0.2 // NEXO_OPERATIVO
             </div>
             <h1 className="text-[12vw] lg:text-7xl font-bold tracking-tight mb-6 font-display break-words leading-[0.85]">
-               Arquitectura sin <span className="text-primary italic">Límites</span>
+               Escalabilidad sin <span className="text-primary italic">Límites</span>
             </h1>
             <p className="text-white/60 text-lg md:text-xl max-w-3xl leading-relaxed">
-               El Stack de Fantasma Digital no es solo un conjunto de herramientas; es el motor que orquestra
-               nuestras soluciones, garantiza la soberanía de tus datos y escala tu visión corporativa.
+               Nuestra tecnología no es solo una lista de herramientas. Es el motor que garantiza que tus datos estén seguros, 
+               que tu sitio nunca se detenga y que tu negocio pueda crecer sin restricciones técnicas.
             </p>
          </div>
 
@@ -42,14 +45,14 @@ const Stack = () => {
          <div className="max-w-7xl mx-auto mb-24">
             <div className="flex items-center gap-4 mb-8">
                <div className="h-px flex-grow bg-white/10"></div>
-               <h2 className="font-mono text-[10px] text-primary uppercase tracking-[0.4em]">Diagnóstico_de_Capacidades</h2>
+               <h2 className="font-mono text-[10px] text-primary uppercase tracking-[0.4em]">Nuestra Ventaja Técnica</h2>
                <div className="h-px flex-grow bg-white/10"></div>
             </div>
 
             <div className="rounded-xl border border-white/10 bg-surface overflow-hidden shadow-2xl">
                <div className="hidden md:grid grid-cols-12 border-b border-white/10 text-[10px] font-mono uppercase tracking-widest text-white/50 bg-white/5">
-                  <div className="col-span-4 p-6">Capacidad Técnica</div>
-                  <div className="col-span-4 p-6 border-l border-white/10 text-center">Protocolo Estándar</div>
+                  <div className="col-span-4 p-6">Área de Ingeniería</div>
+                  <div className="col-span-4 p-6 border-l border-white/10 text-center">Software Tradicional</div>
                   <div className="col-span-4 p-6 border-l border-primary/20 bg-primary/5 text-primary text-center italic">Ingeniería Fantasma</div>
                </div>
 
@@ -138,7 +141,7 @@ const Stack = () => {
                onClick={() => navigate('/intake')}
                className="bg-primary text-background px-12 py-6 font-mono font-black text-xl uppercase hover:bg-white transition-all hover:scale-105 active:scale-95 shadow-[0_0_50px_rgba(250,177,110,0.3)]"
             >
-               [ INICIAR_INTEGRACIÓN ]
+               [ EMPEZAR PROYECTO ]
             </button>
          </div>
       </div>

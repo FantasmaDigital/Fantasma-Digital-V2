@@ -20,23 +20,23 @@ const routes = [
   '/dossier/inkspire-studio',
   '/solutions/full-stack-development',
   '/solutions/api-ecosystems',
-  '/solutions/elite-refactoring',
+  '/solutions/ai-automation',
+  '/solutions/visual-identity-systems',
+  '/solutions/algorithmic-marketing-growth',
+  '/solutions/cloud-devops',
   '/solutions/database-architecture',
   '/solutions/ecommerce-solutions',
   '/solutions/mobile-development',
-  '/solutions/ui-ux-design',
-  '/solutions/cloud-devops',
-  '/solutions/ai-automation',
+  '/solutions/elite-refactoring',
   '/solutions/technical-audit',
   '/solutions/on-premise-infrastructure'
 ];
 
 async function prerender() {
-  console.log('Starting preview server for pre-rendering...');
   // Force Vite preview to serve from the outDir instead of the project root
   const outDir = path.resolve(rootDir, 'dist');
   const server = await preview({
-    preview: { port: 3000, strictPort: false },
+    preview: { port: 7744, strictPort: false },
     build: { outDir },
     root: rootDir
   });
@@ -46,17 +46,39 @@ async function prerender() {
   console.log('Launching browser...');
   const browser = await puppeteer.launch({ 
     headless: 'new',
-    args: ['--no-sandbox', '--disable-setuid-sandbox']
+    args: [
+      '--no-sandbox', 
+      '--disable-setuid-sandbox',
+      '--disable-dev-shm-usage',
+      '--disable-gpu',
+      '--disable-web-security',
+      '--no-first-run',
+      '--no-zygote',
+      '--single-process'
+    ]
   });
+  
   const page = await browser.newPage();
+  
+  // Intercept requests and block heavy assets like images/fonts to save resources
+  // We only need the HTML content and meta tags for SEO.
+  await page.setRequestInterception(true);
+  page.on('request', (req) => {
+    const type = req.resourceType();
+    if (['image', 'font', 'media'].includes(type)) {
+      req.abort();
+    } else {
+      req.continue();
+    }
+  });
 
   for (const route of routes) {
     const url = `http://localhost:${port}${route}`;
-    console.log(`Pre-rendering ${route}...`);
     try {
-      await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 60000 });
+      // Use longer timeout and wait for domcontentloaded which is enough for Meta tags
+      await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 90000 });
       // Short delay to ensure React Helmet Async has applied the title/meta changes
-      await new Promise(r => setTimeout(r, 500));
+      await new Promise(r => setTimeout(r, 1000));
       let html = await page.content();
       
       // Remove Vite dev client injections if they somehow leak in
@@ -71,7 +93,6 @@ async function prerender() {
     }
   }
 
-  console.log('Pre-rendering complete. Closing browser and server...');
   await browser.close();
   server.httpServer.close();
 }

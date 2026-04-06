@@ -11,7 +11,15 @@ const Philosophy = () => {
       <div className="min-h-screen bg-background text-white animate-fadeIn">
          <SEO
             title="Filosofía Ghost Code | Ingeniería & Arte"
-            description="Arquitectura inefable. Poder invisible. Conoce nuestra visión sobre la ingeniería-artista y la eliminación de fricción técnica."
+            description="Construimos software que potencia tu negocio de forma invisible y sin fricciones. Conoce nuestra visión sobre la ingeniería centrada en resultados."
+            breadcrumbs={[{ name: "Nuestra Filosofía", path: "/philosophy" }]}
+            schema={{
+               "@context": "https://schema.org",
+               "@type": "AboutPage",
+               "name": "Nuestra Filosofía | Fantasma Digital",
+               "description": "Nuestra visión sobre la ingeniería de software moderna y el diseño centrado en el usuario.",
+               "url": "https://fantasmadigital.dev/philosophy"
+            }}
          />
          {/* Hero Section */}
 
@@ -21,22 +29,22 @@ const Philosophy = () => {
                <span className="text-[10px] md:text-xs font-bold tracking-[0.4em] md:tracking-[0.5em] uppercase">Filosofía Ingeniero-Artista</span>
             </div>
             <h1 className="text-[11vw] md:text-[clamp(3rem,8vw,8rem)] font-bold leading-[0.9] tracking-tighter uppercase mb-12 text-center md:text-left break-words w-full">
-               Arquitectura<br />Inefable.<br />
+               Arquitectura<br />Robusta.<br />
                <span className="text-primary italic">Poder Invisible.</span>
             </h1>
             <div className="flex flex-col md:flex-row gap-12 items-center md:items-start justify-between text-center md:text-left">
                <p className="max-w-xl text-base md:text-xl text-white/60 font-light leading-relaxed">
-                  El software debe funcionar de forma invisible, sin sobrecarga ni fricción. Construimos sistemas donde la limpieza de la base de datos se encuentra con la fluidez de la interfaz.
+                  El software debe ser una herramienta invisible que potencie tu negocio, no un obstáculo técnico. Construimos sistemas donde la limpieza del código se traduce en velocidad para tus usuarios.
                </p>
                <div className="flex flex-col items-center md:items-start gap-4">
-                  <div className="text-[10px] text-primary font-mono tracking-widest uppercase mb-2 animate-pulse">// Inicialización_Protocolo</div>
+                  <div className="text-[10px] text-primary font-mono tracking-widest uppercase mb-2 animate-pulse">// Configurar Proyecto</div>
                   <button
                      onClick={() => navigate('/intake')}
                      className="group relative flex w-full md:min-w-[320px] items-center justify-between border border-primary/50 bg-primary/5 px-8 py-5 font-mono text-primary transition-all hover:bg-primary hover:text-background active:scale-[0.98]"
                   >
                      <div className="flex items-center gap-3">
                         <span className="text-xs opacity-70 group-hover:opacity-100">$</span>
-                        <span className="text-sm font-bold tracking-[0.2em] uppercase truncate">iniciar_sistema</span>
+                        <span className="text-sm font-bold tracking-[0.2em] uppercase truncate">Empezar</span>
                      </div>
                      <div className="flex items-center gap-4">
                         <span className="w-2 h-4 bg-primary animate-pulse group-hover:bg-background"></span>
@@ -80,12 +88,12 @@ const Philosophy = () => {
          {/* Core Principles Section */}
          <section className="py-24 md:py-32 bg-background relative overflow-hidden">
             <div className="max-w-7xl mx-auto px-6">
-               <h3 className="text-[10px] md:text-xs font-bold tracking-[0.4em] uppercase text-primary mb-12 md:mb-20 text-center">// Principios_Fundamentales</h3>
+               <h3 className="text-[10px] md:text-xs font-bold tracking-[0.4em] uppercase text-primary mb-12 md:mb-20 text-center">// Lo que nos define</h3>
                <div className="grid grid-cols-1 md:grid-cols-3 gap-0 border border-white/10">
                   {[
-                     { icon: Globe, title: 'Ubicuidad', desc: 'Integración fluida en todos los entornos y plataformas.' },
-                     { icon: Zap, title: 'Eficiencia', desc: 'Lógica sin desperdicios. Cada línea de código debe justificar su existencia funcional.' },
-                     { icon: Grid, title: 'Simplicidad', desc: 'La reducción como máxima forma de sofisticación técnica y artística.' }
+                     { icon: Globe, title: 'Crecimiento', desc: 'Diseñamos sistemas que no solo funcionan hoy, sino que están preparados para escalar mañana.' },
+                     { icon: Zap, title: 'Rendimiento', desc: 'Velocidad pura. Cada milisegundo cuenta cuando se trata de retener a un cliente.' },
+                     { icon: Grid, title: 'Claridad', desc: 'Eliminamos el ruido técnico para que puedas enfocarte en lo que realmente importa: tu negocio.' }
                   ].map((principle, idx) => (
                      <div key={idx} className={`p-8 md:p-12 border-b border-white/10 md:border-b-0 ${idx < 2 ? 'md:border-r' : ''} group hover:bg-primary/5 transition-all duration-500`}>
                         <principle.icon className="text-primary w-10 md:w-12 h-10 md:h-12 mb-8 md:mb-12 stroke-[1px] group-hover:scale-110 transition-transform" />
@@ -106,7 +114,7 @@ const Philosophy = () => {
                      <span className="font-mono text-xs text-primary/60 tracking-[0.4em] uppercase block">Ingeniería en Movimiento</span>
                   </div>
                   <h2 className="font-display text-4xl md:text-7xl font-bold italic tracking-tighter">
-                     Código <span className="text-white/20">→ Arquitectura →</span> Web
+                     Idea <span className="text-white/20">→ Ingeniería →</span> Éxito
                   </h2>
                </div>
                <div className="aspect-video bg-black border border-white/10 rounded-sm overflow-hidden relative group shadow-2xl">

@@ -1,29 +1,27 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Cloud, Database, Box, Zap, Shield, Globe, Server, Cpu, HardDrive, Terminal, Hexagon, Activity, ChevronRight } from 'lucide-react';
+import { Box, Zap, Globe, Server, HardDrive, Hexagon, Activity, ChevronRight } from 'lucide-react';
 import { SEO } from '../components/common/SEO';
+import { providers, osSupport } from '../data/constants';
 
 
 const Ecosystem = () => {
    const navigate = useNavigate();
-   const providers = [
-      { name: 'GoDaddy', type: 'Domain Control', desc: 'Gestión masiva de dominios y servicios DNS de alta disponibilidad.' },
-      { name: 'NameCheap', type: 'Domain Privacy', desc: 'Estructura de registro de dominios centrada en la privacidad y redundancia.' },
-      { name: 'Vercel', type: 'Edge Runtime', desc: 'Despliegue instantáneo en el Edge con frameworks reactivos de última generación.' }
-   ];
-
-   const osSupport = [
-      { name: 'Ubuntu', version: 'LTS 24.04', color: 'text-orange-500' },
-      { name: 'CentOS', version: 'Stream 9', color: 'text-blue-400' },
-      { name: 'AlmaLinux', version: 'v9.3 Stable', color: 'text-green-500' },
-      { name: 'RedHat', version: 'RHEL 9.2', color: 'text-red-500' }
-   ];
-
    return (
       <div className="min-h-screen bg-background text-white lg:pb-32 animate-fadeIn">
          <SEO
-            title="Ecosistema & Infraestructura | Total Control"
-            description="Desde dominios hasta Bare Metal. Garantizamos soberanía total sobre tu stack tecnológico con infraestructuras optimizadas para el rendimiento."
+            title="Ecosistema e Infraestructura | Control Total"
+            description="Desde dominios hasta servidores físicos. Garantizamos control total sobre tu tecnología con infraestructuras optimizadas para la velocidad."
+            schema={{
+               "@context": "https://schema.org",
+               "@type": "Service",
+               "serviceType": "Cloud & Infrastructure Management",
+               "provider": {
+                  "@type": "Organization",
+                  "name": "Fantasma Digital"
+               },
+               "description": "Servicios de gestión de dominios, contenedores, orquestación y servidores físicos."
+            }}
          />
          <div className="max-w-[1400px] mx-auto px-6 py-12 lg:py-24">
 

@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { ArrowLeft, Terminal, Cpu, Shield, Zap, CheckCircle, Code, Database, Server, ArrowRight } from 'lucide-react';
+import { ArrowLeft, Terminal, Cpu, Shield, ArrowRight } from 'lucide-react';
 
 import { caseStudies } from '../data/caseStudies';
 import { SEO } from '../components/common/SEO';
@@ -32,6 +32,10 @@ const ServiceCaseStudy = () => {
          <SEO
             title={`${data.title} | Soluciones de Ingeniería de Élite`}
             description={`${data.description} Descubre cómo optimizamos infraestructuras críticas con ingeniería de precisión.`}
+            breadcrumbs={[
+               { name: "Soluciones", path: "/solutions" },
+               { name: data.title, path: `/solutions/${slug}` }
+            ]}
             schema={{
                "@context": "https://schema.org",
                "@type": "Service",

@@ -1,10 +1,10 @@
 export const caseStudies = {
     'full-stack-development': {
         title: 'Desarrollo de Plataformas Web',
-        subtitle: 'Sistemas a medida para grandes empresas',
-        description: 'Construcción y despliegue de plataformas de misión crítica diseñadas para soportar alta transaccionalidad y escalar sin fricción.',
-        challenge: 'En el panorama corporativo actual, las empresas enfrentan el desafío de evolucionar sus infraestructuras digitales para soportar picos de demanda global sin comprometer la estabilidad operativa.',
-        solution: 'Diseñamos arquitecturas distribuidas de alto rendimiento. Implementamos soluciones resilientes que garantizan tiempos de respuesta ultrarrápidos y alta disponibilidad constante.',
+        subtitle: 'Sistemas a medida para empresas que crecen',
+        description: 'Construimos plataformas rápidas y seguras diseñadas para manejar miles de usuarios sin caídas ni lentitud.',
+        challenge: 'Muchas empresas sufren cuando su sitio web no aguanta picos de tráfico o cuando su tecnología se queda pequeña para sus ambiciones de crecimiento.',
+        solution: 'Diseñamos arquitecturas modernas que garantizan velocidad y estabilidad total, permitiendo que tu negocio escale sin que la tecnología sea un problema.',
         results: [
             { metric: '99.99%', label: 'Tiempo en Línea' },
             { metric: '300ms', label: 'Velocidad de Respuesta' },
@@ -13,11 +13,11 @@ export const caseStudies = {
         stack: ['React', 'Next.js', 'Nest.js', 'Express', 'PHP', 'TypeScript', 'Node.js']
     },
     'api-ecosystems': {
-        title: 'Integración de Herramientas',
-        subtitle: 'Unificando la arquitectura empresarial',
-        description: 'Orquestación de sistemas fragmentados creando una capa de comunicación unificada y segura en tiempo real.',
-        challenge: 'A medida que las organizaciones escalan, la fragmentación de software crea silos de información, ralentizando la toma de decisiones y limitando la agilidad corporativa.',
-        solution: 'Desarrollamos ecosistemas de APIs robustas que actúan como el núcleo central de la empresa, permitiendo un flujo de datos continuo, seguro y totalmente automatizado.',
+        title: 'Conexión entre Sistemas (API)',
+        subtitle: 'Tus herramientas trabajando como una sola',
+        description: 'Conectamos tus diferentes plataformas (CRM, pagos, inventario) para que compartan datos en tiempo real de forma automática.',
+        challenge: 'Tener datos dispersos en diferentes programas genera errores manuales y pérdida de tiempo valioso para tu equipo.',
+        solution: 'Creamos una red de comunicación inteligente que unifica toda tu operación, eliminando tareas manuales y asegurando que la información sea siempre precisa.',
         results: [
             { metric: '99.9%', label: 'Disponibilidad' },
             { metric: '50ms', label: 'Velocidad de Enlace' },
@@ -26,11 +26,11 @@ export const caseStudies = {
         stack: ['Nest.js', 'Express.js', 'Go', 'Spring Boot', 'Swagger']
     },
     'elite-refactoring': {
-        title: 'Actualización de Sistemas Antiguos',
-        subtitle: 'Evolución de sistemas legados',
-        description: 'Transición integral de software obsoleto hacia arquitecturas modernas y ágiles, mitigando la deuda técnica acumulada.',
-        challenge: 'Mantener sistemas legados frena la innovación y aumenta la fricción técnica, haciendo que la integración de nuevas tecnologías sea un riesgo crítico de negocio.',
-        solution: 'Aplicamos herramientas de ingeniería inversa y refactorización progresiva. Transformamos el código heredado en un núcleo seguro, ágil y preparado para el futuro.',
+        title: 'Modernización de Software',
+        subtitle: 'Convierte tu sistema antiguo en un activo moderno',
+        description: 'Transformamos sistemas lentos y obsoletos en plataformas ágiles y actuales sin detener tu operación.',
+        challenge: 'Usar software antiguo frena la innovación, es difícil de mantener y representa un riesgo de seguridad constante para tu negocio.',
+        solution: 'Refactorizamos tu código de forma progresiva, mejorando el rendimiento y la seguridad del sistema mientras lo preparamos para el futuro.',
         results: [
             { metric: '0', label: 'Interrupciones' },
             { metric: '85%', label: 'Código Asegurado' },
@@ -39,11 +39,11 @@ export const caseStudies = {
         stack: ['TypeScript', 'Jest', 'CI/CD', 'SonarQube']
     },
     'database-architecture': {
-        title: 'Gestión de Bases de Datos',
-        subtitle: 'Integridad, seguridad y velocidad',
-        description: 'Diseño e implementación de bases de datos de alto volumen para asegurar el acceso inmediato y proteger el gran capital del negocio: su información.',
-        challenge: 'El volumen exponencial de datos empresariales demanda infraestructuras que no solo logren almacenar grandes proporciones de información, sino que garanticen resiliencia y búsquedas instantáneas.',
-        solution: 'Desplegamos clústeres de bases de datos distribuidas con estrategias avanzadas de indexación, optimizando la capacidad de consulta sistemática y garantizando la protección de la información.',
+        title: 'Arquitectura de Datos',
+        subtitle: 'Información segura, rápida y organizada',
+        description: 'Diseñamos bases de datos capaces de procesar grandes volúmenes de información con acceso instantáneo y total seguridad.',
+        challenge: 'A medida que tu empresa crece, tus datos se vuelven más difíciles de manejar, ralentizando tus aplicaciones y poniendo en riesgo tu capital informativo.',
+        solution: 'Implementamos sistemas de almacenamiento de alto rendimiento que permiten búsquedas inmediatas y garantizan la integridad total de tus datos.',
         results: [
             { metric: '95%', label: 'Búsquedas más rápidas' },
             { metric: '10x', label: 'Capacidad de Usuarios' },
@@ -52,11 +52,11 @@ export const caseStudies = {
         stack: ['PostgreSQL', 'MongoDB', 'Redis', 'Elasticsearch', 'Debezium']
     },
     'ecommerce-solutions': {
-        title: 'Venta Digital y E-commerce',
-        subtitle: 'Comercio digital de alto rendimiento',
-        description: 'Construcción de plataformas transaccionales optimizadas para una máxima conversión comercial e infraestructura de integración continua.',
-        challenge: 'En eventos de distribución hiper-competitiva (Black Friday), las caídas de tráfico y la interrupción en las pasarelas resultan en pérdidas críticas para el sector retail contemporáneo.',
-        solution: 'Construimos sistemas de comercio digital de alcance "elástico" que prevén y reaccionan a la demanda, combinando métodos seguros de procesamiento y gestión logística en tiempo real.',
+        title: 'Tiendas Online (E-commerce)',
+        subtitle: 'Comercio digital que convierte',
+        description: 'Construimos tiendas online diseñadas para convertir visitantes en clientes, integrando pagos y logística de forma fluida.',
+        challenge: 'Perder ventas por caídas durante ofertas o por una pasarela de pago lenta es el mayor riesgo para cualquier tienda digital.',
+        solution: 'Creamos ecosistemas de venta elásticos que aguantan cualquier nivel de tráfico y ofrecen una experiencia de compra sin fricciones.',
         results: [
             { metric: '99.9%', label: 'Uptime en Ofertas' },
             { metric: '1.2s', label: 'Carga de Página' },
@@ -65,11 +65,11 @@ export const caseStudies = {
         stack: ['Next.js', 'Stripe', 'GraphQL', 'Vercel', 'Sanity CMS']
     },
     'mobile-development': {
-        title: 'Aplicaciones Móviles',
-        subtitle: 'Presencia corporativa en dispositivos móviles',
-        description: 'Ingeniería de software en estado puro llevada a las palmas de los usuarios mediante soluciones móviles premium.',
-        challenge: 'Las marcas de alto valor se enfrentan al reto de lograr experiencias de software nativas, requiriendo un rendimiento de ejecución perfecto en entornos móviles altamente fragmentados y competidos.',
-        solution: 'Forjamos bases de código altamente eficientes para asegurar el control transaccional nativo, sistemas de GPS en tiempo real e interacciones visuales inmersivas en iOS y Android.',
+        title: 'Aplicaciones Móviles (iOS y Android)',
+        subtitle: 'Tu marca en el bolsillo de tus clientes',
+        description: 'Desarrollamos apps nativas con un diseño premium y rendimiento impecable en cualquier dispositivo.',
+        challenge: 'Tener una app lenta o difícil de usar ahuyenta a tus clientes y daña la imagen de tu marca ante usuarios exigentes.',
+        solution: 'Construimos aplicaciones optimizadas que aprovechan al máximo cada dispositivo, ofreciendo fluidez total y una experiencia inmersiva.',
         results: [
             { metric: '4.8★', label: 'Calificación App Store' },
             { metric: 'Excelente', label: 'Fluidez Visual' },
@@ -77,25 +77,38 @@ export const caseStudies = {
         ],
         stack: ['React Native', 'Swift', 'Kotlin', 'Firebase', 'Redux']
     },
-    'ui-ux-design': {
-        title: 'Diseño Digital y de Usuario',
-        subtitle: 'Sistemas de diseño corporativos',
-        description: 'Ingeniería de diseño aplicada a interfaces que simplifican la complejidad y reducen la curva de aprendizaje logístico y corporativo.',
-        challenge: 'El software de gran alcance tiende a colapsar en la densidad visual, reduciendo el interés del consumidor o trabajador e incrementando altamente los costos de soporte por incomprensión de uso.',
-        solution: 'Conceptualizamos y elaboramos sistemas de componentes rigurosos para una clarificación completa del producto, logrando que el usuario final sienta una atracción orgánica frente al contenido o herramienta a utilizar.',
+    'visual-identity-systems': {
+        title: 'Identidad de Marca y Branding',
+        subtitle: 'Diseño profesional para empresas tecnológicas',
+        description: 'Sistemas visuales que transmiten confianza y profesionalismo, diseñados para ser consistentes en cualquier plataforma.',
+        challenge: 'Muchas empresas de tecnología suelen tener interfaces confusas o identidades visuales que no reflejan la calidad de su producto.',
+        solution: 'Diseñamos sistemas de componentes y guías de marca que aseguran que tu marca se vea impecable, memorable y fácil de usar.',
         results: [
-            { metric: 'Mínima', label: 'Retención de Dudas' },
+            { metric: 'Zero', label: 'Confusión Visual' },
             { metric: '100%', label: 'Consistencia de Marca' },
-            { metric: 'Atractivo', label: 'Fidelidad del Usuario' }
+            { metric: 'Alta', label: 'Fidelidad Visual' }
         ],
-        stack: ['Figma', 'Framer', 'React', 'Tailwind CSS', 'Storybook']
+        stack: ['Figma', 'Framer', 'Three.js', 'Tailwind CSS', 'Storybook']
+    },
+    'algorithmic-marketing-growth': {
+        title: 'Marketing y Crecimiento Digital',
+        subtitle: 'Estrategias basadas en datos y resultados',
+        description: 'Campañas inteligentes y SEO técnico diseñados para convertir tu tráfico web en nuevos clientes de forma automática.',
+        challenge: 'Gastar presupuesto en publicidad sin saber qué funciona o tener un sitio web que nadie encuentra en Google es una pérdida de capital.',
+        solution: 'Implementamos sistemas de adquisición automatizados (CRM + IA) y optimizamos tu infraestructura para que aparezcas donde tus clientes te buscan.',
+        results: [
+            { metric: '300%', label: 'ROI en Pauta' },
+            { metric: 'Top 1', label: 'Posicionamiento Google' },
+            { metric: 'Auto', label: 'Captura de Leads' }
+        ],
+        stack: ['Next.js', 'Vercel', 'Google Ads API', 'HubSpot', 'AI Agents']
     },
     'cloud-devops': {
-        title: 'Infraestructura y Nube',
-        subtitle: 'Disponibilidad infinita de sistemas',
-        description: 'Estructuración y monitoreo de las redes en la nube automatizadas para escalar en el gran panorama digital presente y futuro.',
-        challenge: 'La conectividad actual exime toda tolerancia al margen de caída de una marca. Las plataformas requieren sistemas autosuficientes de distribución o la rentabilidad global corre grave peligro.',
-        solution: 'Integramos despliegues inquebrantables usando infraestructura como código e ingeniera Cloud moderna, abaratando drásticamente el costo de computación y multiplicando el estado latente de la marca.',
+        title: 'Infraestructura Cloud y DevOps',
+        subtitle: 'Servidores siempre activos y bajo tu control',
+        description: 'Gestión moderna de la nube para que tus servicios nunca se detengan y escalen automáticamente con la demanda.',
+        challenge: 'Depender de servidores mal configurados o de terceros genera caídas constantes que dañan la rentabilidad y la reputación de tu empresa.',
+        solution: 'Integramos infraestructura como código que garantiza disponibilidad total, reduce costos y te da control absoluto sobre tus activos digitales.',
         results: [
             { metric: '60%', label: 'Ahorro de Costos' },
             { metric: '15min', label: 'Actualización en vivo' },
@@ -104,11 +117,11 @@ export const caseStudies = {
         stack: ['AWS', 'Kubernetes', 'Docker', 'Terraform', 'ArgoCD']
     },
     'ai-automation': {
-        title: 'IA y Automatización de Tareas',
-        subtitle: 'Tecnología en pos de la alta eficiencia',
-        description: 'Afinación de sistemas inteligentes para realizar con autonomía procesos que el recurso humano debiera ahorrar, maximizando talento y capital.',
-        challenge: 'Empresas masivas sufren diariamente pérdidas colosales de tiempo gestionando operaciones predecibles. La integración a tiempo de la analítica del lenguaje moderno significa o liderar el mercado o ser absorbido lentamente por la competencia.',
-        solution: 'Introducimos inteligencia sintética en el proceso estructural diario, capacitando un bot contextual, de predicción analítica y respuesta automática infalible frente a crisis o labores sistémicas masificadas.',
+        title: 'Inteligencia Artificial y Agentes',
+        subtitle: 'Automatiza procesos y multiplica tu eficiencia',
+        description: 'Sistemas inteligentes que realizan tareas repetitivas de forma autónoma, ahorrándote tiempo y dinero.',
+        challenge: 'Gestionar manualmente operaciones predecibles consume el talento de tu equipo y frena el crecimiento de tu empresa.',
+        solution: 'Introducimos agentes de IA contextuales que aprenden de tu negocio y responden automáticamente ante cualquier labor masiva o crisis.',
         results: [
             { metric: '80%', label: 'Atención automática' },
             { metric: '<2min', label: 'Respuesta promedio' },
@@ -117,11 +130,11 @@ export const caseStudies = {
         stack: ['GPT-4', 'LangChain', 'Python', 'XGBoost', 'n8n']
     },
     'technical-audit': {
-        title: 'Revisión y Seguridad Técnica',
-        subtitle: 'Blindaje a ciberataques del entorno actual',
-        description: 'Aplicación constante y masiva de barridos a todo ecosistema del proyecto digital en busca de brechas o huecos críticos de la empresa.',
-        challenge: 'Los continuos y agigantados métodos de intromisión actual pueden comprometer todo el avance y economía de una empresa en un solo descuido técnico sin protección activa e inherente a su flujo habitual de código.',
-        solution: 'Dedicamos un rastreo penetrante con herramientas de máxima fiabilidad internacional e imbuimos los sistemas corporativos del cliente en defensivos técnicos estrictos logrando un cierre total a las fugas y un alivio de limpieza continua.',
+        title: 'Seguridad y Auditoría Técnica',
+        subtitle: 'Protección real ante amenazas digitales',
+        description: 'Auditorías constantes para encontrar y cerrar brechas de seguridad antes de que pongan en riesgo tu negocio.',
+        challenge: 'Un solo descuido técnico puede comprometer toda la base de datos y la economía de tu empresa en cuestión de minutos.',
+        solution: 'Realizamos rastreos profundos y fortificamos tus sistemas con estándares internacionales para garantizar un entorno libre de riesgos.',
         results: [
             { metric: '100%', label: 'Seguridad Reforzada' },
             { metric: '60%', label: 'Más Velocidad' },
@@ -131,10 +144,10 @@ export const caseStudies = {
     },
     'on-premise-infrastructure': {
         title: 'Servidores y Equipos Físicos',
-        subtitle: 'Poder computacional exclusivo al máximo',
-        description: 'La entrega llave en mano de redes aisladas en bases fijas construidas en hardware sólido e irrebatible del que proveer el mejor nivel de energía y comunicación intermitente de la institución.',
-        challenge: 'Algunas normativas y regímenes institucionales, así como sectores estratégicos puros y duros, prohíben rotundamente la delegación externa del resguardo de material, además de no permitir jamás un desfase por redes sobre expuestas.',
-        solution: 'Llevamos el cerebro metálico y arquitectónico al mismo recinto de trabajo, armando estaciones soberanas de velocidad imperceptible al tiempo cronológico. Total poder sin dependencia de conexión exterior.',
+        subtitle: 'Control total de tu infraestructura local',
+        description: 'Configuración y despliegue de hardware propio para empresas que requieren máxima privacidad y soberanía de datos.',
+        challenge: 'Ciertos sectores no pueden delegar el resguardo de su información a la nube o necesitan una velocidad de red que solo el hardware local permite.',
+        solution: 'Instalamos servidores de alto rendimiento en tu propio recinto, garantizando velocidad imperceptible y seguridad física total.',
         results: [
             { metric: '<1ms', label: 'Velocidad de Red' },
             { metric: '100%', label: 'Control de Datos' },

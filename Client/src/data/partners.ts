@@ -18,5 +18,13 @@ export const partners = [
     {
         name: "GRUPO JENOMADA",
         image: "/patners/grupo-jenomada.png"
+    },
+    {
+        name: "ELECTRIC HOME",
+        image: "/patners/electric-home.png"
+    },
+    {
+        name: "TODOVISA",
+        image: "/patners/todovisa.png"
     }
 ];
